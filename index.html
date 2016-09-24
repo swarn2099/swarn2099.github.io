@@ -5,6 +5,7 @@
 
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<meta http-equiv="refresh" content="3600" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -21,24 +22,24 @@
 					<td>
 <h3 class="white-text">
 <script>
-var currentTime = new Date()
+function updateTime(){
+	var currentTime = new Date()
 	var hours = currentTime.getHours()
 	var minutes = currentTime.getMinutes()
-
-	if (minutes < 10)
-	minutes = "0" + minutes
-
-	var suffix = "AM";
-	if (hours >= 12) {
-	suffix = "PM";
-	hours = hours - 12;
+	if (minutes < 10){
+			minutes = "0" + minutes
 	}
-	if (hours == 0) {
-	hours = 12;
+	var t_str = hours + ":" + minutes + " ";
+	if(hours > 11){
+			t_str += "PM";
+	} else {
+			t_str += "AM";
 	}
-
-	document.write("<b>" + hours + ":" + minutes + " " + suffix + "</b>")
+	document.getElementById('time_span').innerHTML = t_str;
+}
+setInterval(updateTime, 1000);
 	</script>
+	<div id="time_span"></div>
 	<br>
 	<br>
 	<script>
