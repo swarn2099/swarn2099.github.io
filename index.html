@@ -5,8 +5,6 @@
 
 		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="time.js" defer></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -21,12 +19,36 @@
 			<tbody>
 				<tr>
 					<td>
-						<a href="http://time.is/Austin" id="time_is_link" rel="nofollow" style="color:white;background:black" ></a>
-						<span id="Austin_z123" style="font-size:30px;color:white;background:black"></span>
-						<script src="http://widget.time.is/en.js"></script>
-						<script>
-						time_is_widget.init({Austin_z123:{template:"TIME<br>DATE", time_format:"12hours:minutes AMPM", date_format:"dayname, monthname dnum, year"}});
-						</script>
+<h3 class="white-text">
+<script>
+var currentTime = new Date()
+	var hours = currentTime.getHours()
+	var minutes = currentTime.getMinutes()
+
+	if (minutes < 10)
+	minutes = "0" + minutes
+
+	var suffix = "AM";
+	if (hours >= 12) {
+	suffix = "PM";
+	hours = hours - 12;
+	}
+	if (hours == 0) {
+	hours = 12;
+	}
+
+	document.write("<b>" + hours + ":" + minutes + " " + suffix + "</b>")
+	</script>
+	<br>
+	<br>
+	<script>
+	var currentDate = new Date()
+var day = currentDate.getDate()
+var month = currentDate.getMonth() + 1
+var year = currentDate.getFullYear()
+document.write("<b>" + month + "/" + day + "/" + year + "</b>")
+</script>
+</h3>
 					</td>
 				</tr>
 				<tr>
