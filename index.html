@@ -27,12 +27,12 @@ function updateTime(){
 	var hours = currentTime.getHours()
 	var minutes = currentTime.getMinutes()
 	if (hours > 13) {
-		hours1 = hours - 12;
+		hours = hours - 12;
 	}
 	if (minutes < 10){
 			minutes = "0" + minutes
 	}
-	var t_str = hours1 + ":" + minutes + " ";
+	var t_str = hours + ":" + minutes + " ";
 	if(hours > 11){
 			t_str += "PM";
 	} else {
