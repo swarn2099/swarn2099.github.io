@@ -28,6 +28,8 @@ function updateTime(){
 	var minutes = currentTime.getMinutes()
 	if (hours > 13) {
 		hours1 = hours - 12;
+	}else {
+		hours1 = hours;
 	}
 	if (minutes < 10){
 			minutes = "0" + minutes
