@@ -58,6 +58,6 @@ footer.page-footer {
 .card{
   width: 400px;
 }
-.col.card{
+.row .col.card{
   padding: 0;
 }
