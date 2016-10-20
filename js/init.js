@@ -2,7 +2,6 @@
   $(function(){
 
     $('.parallax').parallax();
-    $('.carousel').carousel();
     $('.scrollspy').scrollSpy();
     $('.dropdown-button').dropdown({
     inDuration: 300,
