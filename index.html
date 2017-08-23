@@ -1,98 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Mirror</title>
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/parralax.js"></script>
-		<meta http-equiv="refresh" content="3600" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, height=device-height" />
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-	</head>
-	<body class="black">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Comet Boards</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/scroll.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="orange darken-4 white-text" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="index.html" class="brand-logo white-text">Comet Boards</a>
+    <ul class="right hide-on-med-and-down white-text">
+      <li><a href=".html" class="white-text">Rent a Board</a></li>
+      <li><a href=".html" class="white-text">Conact Us</a></li>
+      <li><a href=".html" class="white-text">About Comet Board Rentals</a></li>
+    </ul>
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href=".html">Rent a Board</a></li>
+      <li><a href=".html">Contact Us</a></li>
+      <li><a href=".html">About a Comet Board</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text text-lighten-2">An easy way to get around</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="images/board.jpg" alt="Unsplashed background img 1" width="50"></div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <!--   Icon Section   -->
+    <div class="row">
+      <div class="col s12 m12">
+        <div class="icon-block">
+          <h2 class="center brown-text"><i class="material-icons">location_city</i></h2>
+          <h5 class="center">Welcome to College</h5>
+          <p class="light">We enter some shit here about how getting around the campus is easier with a skateboard/longboard.<br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light">Why Comet Boards?</h5>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="images/board2.jpg" alt="Unsplashed background img 2" width="50"></div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <hr color="black">
+        <h4>Enter bullshit here</h4>
+        <hr color="black">
+        <br><br>
+        <div class="col s12 m12">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light">Offered by Brain</h5>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
+</div>
+
+<footer class="page-footer teal">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Made by <a class="brown-text text-lighten-3" href="http://new.hexr.org/planview"></a>
+    </div>
+  </div>
+</footer>
 
 
-	<div class="left">
-		<table class="left">
-			<tbody>
-				<tr>
-					<td>
-<h3 class="white-text">
-<script>
-function updateTime(){
-	var currentTime = new Date()
-	var hours = currentTime.getHours()
-	var minutes = currentTime.getMinutes()
-	if (hours > 13) {
-		hours1 = hours - 12;
-	}else if (hours == 0) {
-		hours1 ="12";
-	}
-	else {
-		hours1 = hours;
-	}
-	if (minutes < 10){
-			minutes = "0" + minutes
-	}
-	var t_str = hours1 + ":" + minutes + " ";
-	if(hours > 11){
-			t_str += "PM";
-	} else {
-			t_str += "AM";
-	}
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
-	document.getElementById('time_span').innerHTML = t_str;
-}
-setInterval(updateTime, 1000);
-	</script>
-	<div id="time_span"></div>
-	<script>
-	var d = (new Date()).toString().split(' ').splice(1,3).join(' ');
-	document.write(d)
-</script>
-</h3>
-					</td>
-					<td>
-						<h4 class="white-text">
-								<script>
-								var currentTimeS = new Date()
-								var hoursS = currentTimeS.getHours()
-								if (hoursS < 12) {
-									document.write("Good Morning Swarn")
-								} else if (hoursS < 17) {
-									document.write("Good Afternoon Swarn")
-								} else if (hoursS < 20) {
-									document.write("Good Evening Swarn")
-								}else {
-									document.write("Good Night Swarn")
-								}
-								</script>
-						</h4>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&days=4&tempunit=FAHRENHEIT&windunit=MILE_PER_HOUR&layout=dark"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups" style="width: 350px;height: 330px"></iframe>
-					</td>
-					<td>
-						<iframe class="left" src="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=swarnwhs%40gmail.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="330" frameborder="0" scrolling="no"></iframe>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-
-
-	    <div class="parallax-container">
-	      <div class="parallax"><img src="images/robotics.png"></div>
-	    </div>
-
-
-
-
-
+  </body>
 </html>
