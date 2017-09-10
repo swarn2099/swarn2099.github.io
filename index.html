@@ -1,152 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title> Comet App </title>
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/scroll.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body class="white">
-  <div class="navbar-fixed">
-<nav class="orange darken-4 white-text fixed" role="navigation">
-  <div class="nav-wrapper container">
-    <a id="logo-container" href="index.html" class="brand-logo white-text">Comet App</a>
-    <ul class="right hide-on-med-and-down white-text">
-      <li><a href="teamSchedule.html" class="white-text">Team Schedule</i>
-      <li><a href="compSchedule.html" class="white-text">Competition Schedule</a></li>
-      <li><a href="pictures.html" class="white-text">Pictures & Videos</a></li>
-      <li><a href="job.html" class="white-text">Job Descriptions</a></li>
-    </ul>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>UT Dallas | Home</title>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="init.js"></script>
+    <style>
 
-  </div>
-</nav>
-</div>
-</div>
+      ::-webkit-scrollbar {
+      display: none;
+}
+    </style>
+
+    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+<!--Upcoming Events-->
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
-      <br><br>
-      <h5 class="header center white-text text-lighten-2">The University of Texas at Dallas</h5>
+      <h1 class="header center  white-text" id="home">Upcoming Events</h1><br><br>
+      <div class="row center">
+        <a href="#who"  class="btn-large waves-effect waves-light cyan smoothscroll">Explore</a></div>
+      </div>
     </div>
-  </div>
-  <div class="parallax"><img src="images/awesome.gif"  alt="Unsplashed background img 1" width="50"></div>
+  <div class="parallax"><img src="city1.jpg" alt="" width="1"></div>
 </div>
 
-<div class="container white">
-  <div class="section white">
-    <!--   Icon Section   -->
-    <div class="row white">
-      <div class="col s12 m4">
-        <div class="icon-block"><hr color="black">
-          <a href="https://outlook.office.com/owa/"><img src="images/outlook.png" width="90%" target="_blank"></a>
-        </div>
-      </div>
-      <div class="col s12 m4">
-          <hr color="black"><a href="https://daih-prd.utshare.utsystem.edu/psp/DAIHPRD/EMPLOYEE/EMPL_UTD/h/?tab=PAPP_GUEST"><img src="images/galaxy.png" width="90%" target="blank"></a><hr color="black">
-        </div>
-        <div class="col s12 m4">
-            <a href="https://elearning.utdallas.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1"><img src="images/elearn.jpg" width="90%" target="blank" class="center"></a><hr color="black">
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="parallax-container valign-wrapper">
+<!--Utilities-->
+<div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
+      <h1 class="header center  white-text" id="home">Utilities</h1><br><br>
       <div class="row center">
-        <h5 class="header col s12 light">Things to Do</h5>
+        <a href="https://galaxy.utdallas.edu"  class="btn-large waves-effect waves-light orange darken-2 smoothscroll" target="_blank">Galaxy</a></div>
+      <div class="row center">
+        <a href="https://outlook.office365.com/owa/"  class="btn-large waves-effect waves-light blue darken-3 smoothscroll white-text" target="_blank">Outlook</a></div>
+        <div class="row center">
+          <a href="https://elearning.utdallas.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1"  class="btn-large waves-effect waves-light grey darken-3 smoothscroll white-text" target="_blank">eLearning</a></div>
       </div>
     </div>
-  </div>
-  <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
+  <div class="parallax"><img src="work.jpg" alt="" width="100%"></div>
 </div>
-<div class="container">
-  <div class="section">
-    <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <br><br>
-        <div class="col s6">
-          <a class="waves-effect waves-light" href="#modal1"><i class="material-icons large black-text" href="#modal1">local_dining</i></a>
-        </div>
-        <div class="col s6">
-          <a class="waves-effect waves-light" href="#modal2"><i class="material-icons large black-text" href="#modal2">navigation</i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="modal1" class="modal bottom-sheet cyan darken-4">
-  <div class="modal-content white-text">
-    <h4>Meal Swipe Counter</h4><br><br><br>
 
-      <div class="fixed-action-btn horizontal click-to-toggle">
-        <a class="btn-floating btn-large red">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating green"><i class="material-icons">add_circle</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">account_balance
-</i></a></li>
-        </ul>
-      </div>
-
-    <div class="input-field col s12">
-  <select>
-    <option value="1">Comet 10</option>
-    <option value="2">Comet 14</option>
-    <option value="3">Comet 19</option>
-  </select>
-</div>
-<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-  <i class="material-icons right">send</i>
-</button>
-
-  </div>
-
-</div>
-<div id="modal2" class="modal bottom-sheet cyan darken-4">
-  <div class="modal-content white-text center">
-<iframe src="http://www.utdallas.edu/maps/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="300px" allowfullscreen></iframe>  </div>
-  <div class="modal-footer cyan darken-4">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat white-text">Close</a>
-  </div>
-</div>
-<div class="parallax-container valign-wrapper">
+<!--Waittimes-->
+<div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
+      <h1 class="header center  white-text" id="home">Wait Times</h1><br><br>
       <div class="row center">
-        <h5 class="header col s12 light">Have a wonderful day</h5>
+        <a href="#who"  class="btn-large waves-effect waves-light teal smoothscroll">Coming Soon</a></div>
       </div>
     </div>
-  </div>
-  <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
+  <div class="parallax"><img src="food.jpg" alt="" width="100%"></div>
 </div>
-
-<footer class="page-footer teal">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
+<!--Map-->
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <h1 class="header center  white-text" id="home">Map</h1><br><br>
+      <div class="row center">
+        <a href="#who"  class="btn-large waves-effect waves-light amber darken-3 smoothscroll">Coming Soon</a></div>
       </div>
     </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    Made by Swarn Singh<a class="brown-text text-lighten-3" href="http://new.hexr.org/planview"></a>
-    </div>
-  </div>
-</footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
+  <div class="parallax"><img src="map.jpg" alt="" width="100T"></div>
+</div>
   </body>
 </html>
