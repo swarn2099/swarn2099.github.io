@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>UT Dallas | Home</title>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="init.js"></script>
-    <style>
-      ::-webkit-scrollbar {
+<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/scroll.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<style>
+  ::-webkit-scrollbar {
       display: none;
 }
     </style>
-
-    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
 
 <!--Upcoming Events-->
 <div id="index-banner" class="parallax-container">
@@ -25,7 +18,16 @@
     <div class="container">
       <h1 class="header center  white-text" id="home">Upcoming Events</h1><br><br>
       <div class="row center">
-        <a href="#who"  class="btn-large waves-effect waves-light cyan smoothscroll">Explore</a></div>
+        <a href="#modal1"  class="waves-effect waves-light btn modal-trigger cyan">What's happeneing today</a></div>
+        <div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
       </div>
     </div>
   <div class="parallax"><img src="city1.jpg" alt="" width="1"></div>
@@ -47,13 +49,15 @@
   <div class="parallax"><img src="work.jpg" alt="" width="100%"></div>
 </div>
 
-<!--Waittimes-->
+<!--Menu/Waittimes-->
 <div id="index-banner" class="parallax-container">
   <div class="section no-pad-bot">
     <div class="container">
-      <h1 class="header center  white-text" id="home">Wait Times</h1><br><br>
+      <h1 class="header center  white-text" id="home">Menus & Wait Times</h1><br><br>
       <div class="row center">
-        <a href="timer.html"  class="btn-large waves-effect waves-light teal smoothscroll" target="_blank">Coming Soon</a></div>
+        <a href="https://www.dineoncampus.com/utdallasdining/whats-on-the-menu"  class="btn-large waves-effect waves-light red darken-4" target="_blank">Menus & Times</a></div>
+      <div class="row center">
+        <a href=""  class="btn-large waves-effect waves-light teal smoothscroll" target="_blank">Wait Times - Coming Soon</a></div>
       </div>
     </div>
   <div class="parallax"><img src="food.jpg" alt="" width="100%"></div>
@@ -69,5 +73,12 @@
     </div>
   <div class="parallax"><img src="map.jpg" alt="" width="100%"></div>
 </div>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
   </body>
 </html>
