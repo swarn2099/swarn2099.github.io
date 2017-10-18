@@ -5,7 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
- img {
+img{
      -webkit-filter: blur(6px); /* Safari 6.0 - 9.0 */
      filter: blur(6px);
  }
@@ -23,7 +23,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 600px;
+  min-height: 400px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
