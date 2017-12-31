@@ -1,196 +1,100 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <title>Diff Calc Cheat Sheet</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
-  <meta property="og:title" content="">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="">
-	<meta property="og:site_name" content="">
-	<meta property="og:description" content="">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/scroll.css">
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
-  
-
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <script src="js/modernizr-2.7.1.js"></script>
-<script type="text/javascript">
-  function copyToClipboard(element) {
-  var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-}
-</script>
-
-  
-</head>
-
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Tunify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!--CSS Files-->
+      <link rel="stylesheet" hre=f"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+      <link rel="stylesheet" type="text/css" href="background.css">
+      <link rel="stylesheet" type="text/css" href="search.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css.map">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"></head>
 <body>
-
-    
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-          </ul>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </div>
-        
-    <header>
-        <div class="row header-info">
-          <div class="col-sm-10 col-sm-offset-1 text-center">
-            <h1 class="wow fadeIn">Math 2413 Final Review</h1>
-            <br />
-            <p class="lead wow fadeIn" data-wow-delay="0.5s">Here are some practice tests that might help you</p>
-            <br />
-              
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                <div class="row">
-                  <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                    <a href="#pricing" class="btn btn-secondary btn-lg scroll">More</a>
-                  </div>
-                  <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                    <a href="#invite" class="btn btn-primary btn-lg scroll">Share</a>
-                  </div>
-                </div><!--End Button Row-->  
-              </div>
+<div class="one">
+      <h1 id="tunify"></h1>
+      <h3 id="decription"></h3><br>
+      <!--<input type="text" class="search rounded animated infinite pulse" placeholder="Enter song name, playlist name, or album name and click anaylize">-->
+      <br>
+      <div class="columns">
+        <div class="column">
+          <a href="https://tunify.xyz" target="_blank"><div class="box animated bounceInUp">
+            <article class="media">
+            <div class="media-content">
+             <div class="media-center">
+              <figure class="image is-256x256">
+                <img src="map.svg" alt="Image" class="animated bounce infinite">
+              </figure>
             </div>
-            
-          </div>
-        </div>
-      </div>
-    </header>
-  
-        
-        
-    <!--Pricing-->
-    <section id="pricing" class="pad-lg scrollspy">
-      <div class="container">
-        <div class="row margin-40">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <hr color="white">
-            <h2 class="white">Practice Tests</h2>
-            <hr color="white">
-          </div>
-        </div>
-        
-        <div class="row margin-50">
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Test 1 </h5></li>
-    					<li class="price"><div class="amount">Oct. 5<small></small></div></li>
-    					<li class="info">Section 1 - 3.5</li>
-    					<a href="test1part1.pdf"><li class="features first">Test 1</li></a>
-    					<a href="test1part2.pdf"><li class="features">Test 2</li></a>
-    					<a href="test1part3.pdf"><li class="features">Test 3</li></a>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="0.4s">
-            <ul class="list-unstyled pricing-table  text-center">
-    					<li class="headline"><h5 class="white">Test 2</h5></li>
-    					<li class="price"><div class="amount">Nov. 9<small></small></div></li>
-    					<li class="info">Section 3.6 - 5.2</li>
-    					<a href="test2part1.pdf"><li class="features first">Test 1</li></a>
-    					<a href="test2part2.pdf"><li class="features">Test 2</li></a>
-    					<a href="test2part3.pdf"><li class="features">Test 3</li></a>
-    				</ul>
-          </div>
-          
-          <div class="col-sm-4 pricing-container wow fadeInUp" data-wow-delay="1.3s">
-            <br />
-            <ul class="list-unstyled pricing-table text-center">
-    					<li class="headline"><h5 class="white">Final Exam</h5></li>
-    					<li class="price"><div class="amount">Dec. 9<small></small></div></li>
-    					<li class="info">Section 5.3 - 6.5</li>
-    					<a href="finalexam.pdf"><li class="features first">Final Exam Review</li></a>
-    					<a href="https://www.derivative-calculator.net/"><li class="features">Derivative Calc</li></a>
-    					<a href="https://www.integral-calculator.com/"><li class="features">Integral Calc</li></a>
-    				</ul>
-          </div>
-          
-        </div>
-        
-      </div>
-    </section>
-    
-    
-    <section id="invite" class="pad-lg light-gray-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 text-center">
-            <i class="fa fa-envelope-o margin-40"></i>
-            <h2 class="black">Share it with a friend</h2>
-            <br />
-            <p class="black">Be nice! Send it to your friends so they can get a good grade as well</p>
-            <br />
-            
-            <div class="row">
-              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                <form role="form">
-                  <div class="form-group">
-                    <p id="p1">swarn2099.github.io</p>
-                  </div>
-                  <button type="" class="btn btn-primary btn-lg" onclick="copyToClipboard('#p1')"">Copy</button>
-                </form>
-              </div>
-            </div><!--End Form row-->
-
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <footer>
-      <div class="container">
-        
-        <div class="row">
-          <div class="col-sm-8 margin-20">
-            <ul class="list-inline social">
-              <li>Courtesy of 3.335B</li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        
-      </div>
-    </footer>
-    
-    
-    <!-- Javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-
-   
-    </body>
+            <div class="media-content">
+              <div class="content">
+                <p><strong>Interactive Map</strong><hr color="black"><br>Discover user-created playlists around you</p>  
+            </div>
+            </article>
+          </div></a></div>
+        <div class="column">
+          <a href="#"><div class="box animated bounceInUp">
+            <article class="media">
+            <div class="media-content">
+             <div class="media-center">
+              <figure class="image is-256x256">
+                <img src="analysis.png" alt="Image" class="animated rubberBand infinite">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p><strong>Analyize</strong><hr color="black"><br>Inteligent data about the music you and other's listen too</p>  
+            </div>
+            </article>
+          </div></a></div>
+        <div class="column">
+          <a href="#"><div class="box animated bounceInUp">
+            <article class="media">
+            <div class="media-content">
+             <div class="media-center">
+              <figure class="image is-256x256">
+                <img src="jukebox.jpg" alt="Image" class="animated pulse infinite">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p><strong>Jukebox</strong><hr color="black"><br>Contribute music to a location, party, or event</p>  
+            </div>
+            </article>
+          </div></a></div></div>
+      </div></div>
+<section class="hero is-large is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        What we do
+      </h1>
+    </div>
+  </div></section>
+<section class="hero is-large is-danger is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Primary bold title
+      </h1>
+      <h2 class="subtitle">
+        Primary bold subtitle
+      </h2>
+    </div>
+  </div></section>
+<script type="text/babel">
+      ReactDOM.render(
+        <h1 class="animated fadeInLeftBig title"><font color="green"><font size="700"> tunify.io</font></font></h1>,
+        document.getElementById('tunify')
+      );
+      ReactDOM.render(
+        <h3 class="animated fadeInRightBig"><font color="green">Music discovery & analysis</font></h3>,
+        document.getElementById('decription')
+      );</script>
+</body>
 </html>
