@@ -28,6 +28,6 @@ function check(){
 
 	
 
-	document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+	document.getElementById("number_correct").innerHTML = "Your score is " + correct;
 	}
 	

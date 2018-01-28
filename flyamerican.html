@@ -38,22 +38,23 @@
     <div class="tile is-ancestor">
   <div class="tile is-parent">
     <article class="tile is-child box animated fadeInLeft">
-      <p class="title" id="demo"></p><hr color="black"><br><h2 class="subtitle">Thanks for choosing American Airlines</h2>
+      <p class="title has-text-danger is-bold" id="demo"></p><hr color="black"><br><h2 class="subtitle has-text-grey-darker">Thanks for choosing American Airlines</h2>
 <hr color="black"><br>
-      <p class="subtitle" id="clockbox"></p>
+      <p class="subtitle has-text-grey-darker" id="clockbox"></p>
+    </article>
+  </div>
+    <div class="tile is-parent">
+    <article class="tile is-child box animated fadeInRight">
+      <p class="title has-text-centered has-text-info  " id="demo2"></p><hr color="black"><br>
+      <p class="subtitle has-text-centered" id="orgin"></p><hr color="black">
+      <p class="subtitle has-text-centered has-text-warning  " id="currentStatus"></p><hr color="black">
     </article>
   </div>
   <div class="tile is-parent">
     <article class="tile is-child box animated fadeInDown">
-      <p class="title">Things to look for</p>
+      <p class="title has-text-danger ">Things to look for</p>
       <hr color="black"><br>
-      <p id="poi"></p>
-    </article>
-  </div>
-  <div class="tile is-parent">
-    <article class="tile is-child box animated fadeInRight">
-      <p class="title" id="demo2"></p><hr color="black"><br>
-      <p class="subtitle" id="orgin"></p>
+      <p class="title is-5 has-text-primary " id="poi"></p>
     </article>
   </div>
 </div>
@@ -63,15 +64,14 @@
     <div class="tile is-link">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child box animated fadeInLeft is-link">
-          <p class="title">Current Weather</p>          
-          <hr color="black"><br>
           <p class="subtitle"><a class="weatherwidget-io" href="https://forecast7.com/en/30d63n96d33/college-station/?unit=us" data-label_1="COLLEGE STATION" data-label_2="WEATHER" data-days="5" data-theme="original" >COLLEGE STATION WEATHER</a>
-          </p>
+          </p><br>
+          <p class="title has-text-info ">Weather Outside</p>          
         </article>
       </div>
-     <div class="tile is-parent animated pulse">
-        <article class="tile is-child notification">
-          <p id="demo3"></p><hr color="black"><br>
+     <div class="tile is-parent animated pulse is-dark">
+        <article class="tile is-child is-dark">
+          <p id="demo3"></p>
         </article>
       </div>
     </div>
@@ -105,11 +105,12 @@
   <div class="tile is-parent">
     <article class="tile is-child box animated fadeInUp">
       <div class="content">
-        <p class="title">Air Trivia</p>
+        <p class="title has-text-dark ">Air Trivia</p>
         <hr color="black">
-          <figure class="image "><img src="airport.svg"></figure>           
+          <figure class="image"><a href="quiz.html"><img src="airport.png"></a></figure>
+          <hr color="black">
+          <p class="title-6">Play Air Trivia and get a chance to win a free meal or miles!</p>           
       </div>
-      <a class="button is-link is-rounded is-large is-centered" href="quiz.html">Play Air Trivia</a>
     </article>
   </div>
 </div>
