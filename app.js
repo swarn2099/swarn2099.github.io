@@ -12,18 +12,18 @@ function myFunction(){
 	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure class="image is-4by3"><img src="giphy.gif"></figure></a>'; 
 	localStorage.setItem("flightStatus", strflightStatus);
 
+	var month = document.getElementById("month");
+	var day = document.getElementById("day");
+	var year = document.getElementById("year");
 
 
 		var endpoint = "https://aa-team-jerry.herokuapp.com/flight?flightNumber=";
-		var date = "2018-01-01";
-		var endpoint2 = (endpoint + flightNumber.value + "&" + "date=" + date);
-		console.log(endpoint2);
+		var endpoint2 = (endpoint + flightNumber.value + "&" + "date=" + year.value+"-" + month.value + "-" + day.value);
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.open("GET", endpoint2, false);
 	    xmlHttp.send(null);
 	    var json = xmlHttp.responseText, obj = JSON.parse(json);
 	    var test = obj.origin + " to " + obj.destination;
-	    
 	   	localStorage.setItem("orgin", test);
 
 }
