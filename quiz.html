@@ -4,26 +4,22 @@
     <meta charset="UTF-8" />
     <title>flyAmerican.today | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    <script src="app.js"></script>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="main.js"></script>
     <!--CSS Files-->
     <link rel="stylesheet" hre=f"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quiz.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 <body class="color-page"><br>
   <section class="container color-page"> 
         <div class="card animated fadeInUpBig is-half">
           <div class="card-content">
-                          <div class="columns">
-                <div class="column">
+            <div class="columns">
+              <div class="column">
                 <a href="index.html"><h1 class="title animated fadeInRightBig ">fly<font color="red">American</font>.<font color="blue">today</font></h1></a>
               </div>
               <div class="column">
@@ -31,58 +27,44 @@
               </div>
             </div>
             <hr color="black">
-              <div class="tile is-ancestor">
-                  <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    Question
-                  </article>
-                </div>
-                <div class="tile is-vertical is-8">
-                  <div class="tile">
-                    <div class="tile is-parent is-vertical is-half">
-                      <article class="tile is-child box">
-                        Answer 1
-                      </article>
-                      <article class="tile is-child box">
-                        Answer 2
-                      </article>
-                      <article class="tile is-child box">
-                        Answer 3
-                      </article>
-                      <article class="tile is-child box">
-                        Answer 4
-                      </article>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-        <div class="card animated fadeInUpBig is-half">
-          <div class="card-content">
-            <hr color="black">
-            <div class="columns">
-              <div class="column">
-              <div class="tile is-ancestor">
-                  <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    Score
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="column">
-                            <div class="tile is-ancestor">
-                  <div class="tile is-parent">
-                  <article class="tile is-child box">
-                    Next
-                  </article>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
+            <form id = "quiz" name = "quiz">
+
+      <div class="tile is-child box">
+        <p class = "questions title">How many miles per dollar do you get with AA Advantage Platinum?</p>
+        <input type = "radio" id = "mc" name = "question1" value = "$5"> $5<br>
+        <input type = "radio" id = "mc" name = "question1" value = "Heartford"> $8<br>
+        <input type = "radio" id = "mc" name = "question1" value = "Hartford"> $9<br>
+        <input type = "radio" id = "mc" name = "question1" value = "Heartford"> $12<br>
+      </div>
+      <div class="tile is-child box">
+        <p class = "questions title">When was American airlines first founded?</p>
+        <input type = "radio" id = "mc" name = "question2" value = "Hartford"> 1906<br>
+        <input type = "radio" id = "mc" name = "question2" value = "Heartford"> 1975<br>
+      </div>
+      <div class="tile is-child box">
+        <p class = "questions title">How many airplanes does AA own?</p>
+        <input type = "radio" id = "mc" name = "question3" value = "Heartford"> 450<br>
+        <input type = "radio" id = "mc" name = "question3" value = "Hartford"> 1500<br>
+      </div>
+      <div class="tile is-child box">
+        <p class = "questions title">Which one of these cities is the hub of AA</p>
+        <input type = "radio" id = "mc" name = "question4" value = "Hartford"> Ft. Worth<br>
+        <input type = "radio" id = "mc" name = "question4" value = "Heartford"> Atlanta<br>
+      </div>
+      <div class="tile is-child box">
+        <p class = "questions title">How many countries does AA fly to?</p>
+        <input type = "radio" id = "mc" name = "question5" value = "Heartford"> 96<br>
+        <input type = "radio" id = "mc" name = "question5" value = "Hartford"> 55<br>
+      </div>
+      <div class="tile is-child box">
+        <input id = "button" type = "button" value = "I'm finished!" onclick = "check()">
+        <p class="" id="number_correct"></p>
+      </div>
+  </div>
+</div>
+</form>
+</div>
+</div>
   </section>
 
 </body>
