@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>flyAmerican.today</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="app.js"></script>
+
+    <!--CSS Files-->
+    <link rel="stylesheet" hre=f"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body class="color-page">
+    <section class="hero is-light is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title animated fadeInRightBig ">fly<font color="red">American</font>.<font color="blue">today</font></h1>
+                <h2 class="subtitle"></h2>
+            </div>
+        </div>
+    </section>
+<br>
+<div class="container color-page">
+    <div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box animated fadeInLeft">
+      <p class="title" id="demo"></p><hr color="black"><br>
+      <p class="subtitle" id="clockbox"></p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box animated fadeInDown">
+      <p class="title">Dep. to Arv.</p>
+      <p class="subtitle">Seat Number</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box animated fadeInRight">
+      <p class="title" id="demo2"></p>
+      <p class="subtitle">Type of flight</p>
+      <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile is-link">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child box animated fadeInLeft is-link">
+          <p class="title">Current Weather</p>          
+          <hr color="black"><br>
+          <p class="subtitle"><a class="weatherwidget-io" href="https://forecast7.com/en/30d63n96d33/college-station/?unit=us" data-label_1="COLLEGE STATION" data-label_2="WEATHER" data-days="5" data-theme="original" >COLLEGE STATION WEATHER</a>
+          </p>
+        </article>
+      </div>
+
+      <div class="tile is-parent animated pulse ">
+        <article class="tile is-child notification ">
+          <p class="title">Flight Status </p><hr color="black"><br>
+          <figure class="image is-4by3">
+            <img src="giphy.gif">
+          </figure>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child box animated fadeInLeft">
+        <p class="title">Follow Us</p><hr color="black"><br>
+        <div class="columns is-centered">
+          <div class="column is-narrow">
+              <figure class="image is-96x96">
+                <img src="facebook.gif">
+              </figure>
+          </div>
+          <div class="column is-narrow">
+              <figure class="image is-96x96">
+                <img src="twitter.gif">
+              </figure>          
+            </div>
+          <div class="column is-narrow">
+              <figure class="image is-96x96">
+                <img src="insta.gif">
+              </figure>          
+            </div>
+            <div class="column is-narrow">
+              <figure class="image is-96x96">
+                <img src="g+gif.gif">
+              </figure>          
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box animated fadeInUp">
+      <div class="content">
+        <p class="title">Air Trivia</p>
+        <p class="subtitle">With even more content</p>
+        <div class="content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+          <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+          <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+</div>
+</body>
+
+<script type="text/javascript">
+tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://weatherwidget.io/js/widget.min.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","weatherwidget-io-js");
+</script>
+<script> loadApp();
+  </script>
+</html>
+<!--          <div><iframe src="http://embed.flightaware.com/live/flight/AAL998/history/20180127/1920Z/KORD/KSAN"></iframe></div>
+-->
