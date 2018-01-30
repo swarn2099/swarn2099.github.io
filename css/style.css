@@ -21,9 +21,3 @@ html, body {
 a:link {
     text-decoration: none;
 }
-
-body {
-    position: relative;
-    min-height: 700px;
-}
-
