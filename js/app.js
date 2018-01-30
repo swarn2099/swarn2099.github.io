@@ -3,15 +3,15 @@ function myFunction(){
 	var str3 = document.getElementById("last");
 	var flightNumber = document.getElementById("flight");
 	   	if (flightNumber.value == "1246") {
-	   		var strPoint = "This route crosses the Gulf of Mexico<br><br>This route crosses New Orleans<br><br> This route crosses the Mojave Dessert";
-	   	}
-	   	else if (flightNumber.value == "1352") {
 	   		var strPoint = "This route crosses the Grand Canyon<br><br>This route crosses Las Vegas<br><br>This route crosses Lubbock";
 	   	}
 	   	else if (flightNumber.value == "1352") {
-	   		var strPoint = "This route crosses the Great Lakes<br><br>This route crosses by Cleveland<br><br>This route is near Detroit";
+	   		var strPoint = "This route crosses the Gulf of Mexico<br><br>This route crosses by New Orleans<br><br>This route is near Mojave Desert";
 	   	}
-		else if (flightNumber.value == "321") {
+	   	else if (flightNumber.value == "130") {
+	   		var strPoint = "This route crosses the Great Lakes<br><br>This route crosses Cleveland<br><br>This route crosses Detroit";
+	   	}
+		else if (flightNumber.value == "1776") {
 	   		var strPoint = "Passes by Nashville<br><br>Passes by Washington DC<br><br>Passes by Mississippi River";
 	   	}
 	   	else if (flightNumber.value == "750") {
@@ -21,7 +21,7 @@ function myFunction(){
 	   		var strPoint = "Passes by Statue of Liberty<br><br>Passes by Atlantic City<br><br>Passes by Nortfolk";
 	   	}
 	   	else if (flightNumber.value == "354") {
-	   		var strPoint = "Passes by Washington D.C.<br><br>Passes by Nortfolk<br><br>Passes by Wilkmington";
+	   		var strPoint = "Passes by Washington D.C.<br><br>Passes by Nortfolk<br><br>Passes by Wilmington";
 	   	}
 		else if (flightNumber.value == "2257") {
 	   		var strPoint = "Passes by Grand Canyon<br><br>Passes by Colorado Springs<br><br>Passes by Rocky Mountains";
@@ -37,7 +37,7 @@ function myFunction(){
 	var final = "Hello " + str2.value + ' ' + str3.value;
 	localStorage.setItem("result", final);
 
-	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure class="image is-4by3"><img src="status.jpg"></figure></a>'; 
+	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure class="image is-4by3"><img src="img/status.jpg"></figure></a>'; 
 	localStorage.setItem("flightStatus", strflightStatus);
 
 
@@ -52,6 +52,8 @@ function myFunction(){
 	    var status = obj.flightStatus;
 	   	localStorage.setItem("orgin", test);
 	   	localStorage.setItem("flightStatusCurrent", status);
+
+
 
 }
 

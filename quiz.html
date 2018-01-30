@@ -4,68 +4,76 @@
     <meta charset="UTF-8" />
     <title>flyAmerican.today | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="main.js"></script>
+    <script src="js/main.js"></script>
     <!--CSS Files-->
-    <link rel="stylesheet" hre=f"https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">
+
+    <link rel="stylesheete" href="css/radio.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bulma.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="quiz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-</head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<style type="text/css"></style>
 <body class="color-page"><br>
   <section class="container color-page"> 
-        <div class="card animated fadeInUpBig is-half">
-          <div class="card-content">
-            <div class="columns">
-              <div class="column">
-                <a href="index.html"><h1 class="title animated fadeInRightBig ">fly<font color="red">American</font>.<font color="blue">today</font></h1></a>
-              </div>
-              <div class="column">
-                <a href="https://www.aa.com/homePage.do"><img src="aa-logo.png" class="is-pulled-right "></a>
-              </div>
-            </div>
-            <hr color="black">
-            <form id = "quiz" name = "quiz">
-
-      <div class="tile is-child box">
-        <p class = "questions title">How many miles per dollar do you get with AA Advantage Platinum?</p>
-        <input type = "radio" id = "mc" name = "question1" value = "$5"> $5<br>
-        <input type = "radio" id = "mc" name = "question1" value = "Heartford"> $8<br>
-        <input type = "radio" id = "mc" name = "question1" value = "Hartford"> $9<br>
-        <input type = "radio" id = "mc" name = "question1" value = "Heartford"> $12<br>
+    <div class="card animated fadeInUpBig is-half">
+      <div class="card-content">
+        <div class="columns">
+          <div class="column">
+            <a href="index.html"><h1 class="title animated fadeInRightBig ">fly<font color="red">American</font>.<font color="blue">today</font></h1></a>
+          </div>
+          <div class="column">
+            <a href="https://www.aa.com/homePage.do"><img src="aa-logo.png" class="is-pulled-right "></a>
+          </div>
+        </div>
+        <hr color="black">
+        <form id = "quiz" name = "quiz">
+          <div class="tile is-child box">
+            <p class = "questions title">How many miles per dollar do you get with AA Advantage Platinum?</p>
+            <input type = "radio" id = "mc" name = "question1" value = "$5" class="has-text-weight-bold "> 5 miles<br>
+            <input type = "radio" id = "mc" name = "question1" value = "Heartford"> 8 miles<br>
+            <input type = "radio" id = "mc" name = "question1" value = "Hartford"> 9 miles<br>
+            <input type = "radio" id = "mc" name = "question1" value = "Heartford"> 12 miles<br></div>
+          <div class="tile is-child box">
+            <p class = "questions title">When was American airlines first founded?</p>
+            <input type = "radio" id = "mc" name = "question2" value = "Hartford"> 1906<br>
+            <input type = "radio" id = "mc" name = "question2" value = "Heartford"> 1975<br>
+            <input type = "radio" id = "mc" name = "question2" value = ""> 1956<br>
+            <input type = "radio" id = "mc" name = "question2" value = ""> 1984<br></div>
+          <div class="tile is-child box">
+            <p class = "questions title">How many airplanes does AA own?</p>
+            <input type = "radio" id = "mc" name = "question3" value = "Heartford"> 450<br>
+            <input type = "radio" id = "mc" name = "question3" value = "Hartford"> 1500<br>
+            <input type = "radio" id = "mc" name = "question3" value = ""> 50<br>
+            <input type = "radio" id = "mc" name = "question3" value = ""> 568<br></div>
+          <div class="tile is-child box">
+            <p class = "questions title">Which one of these cities is the hub of AA</p>
+            <input type = "radio" id = "mc" name = "question4" value = "Hartford"> Ft. Worth<br>
+            <input type = "radio" id = "mc" name = "question4" value = "Heartford"> Atlanta<br>
+            <input type = "radio" id = "mc" name = "question4" value = ""> Dallas<br>
+            <input type = "radio" id = "mc" name = "question4" value = ""> Houston<br></div>
+          <div class="tile is-child box">
+            <p class = "questions title">How many countries does AA fly to?</p>
+            <input type = "radio" id = "mc" name = "question5" value = "Heartford"> 96<br>
+            <input type = "radio" id = "mc" name = "question5" value = "Hartford"> 55<br>
+            <input type = "radio" id = "mc" name = "question5" value = ""> 43<br>
+            <input type = "radio" id = "mc" name = "question5" value = ""> 89<br></div>
+          <div class="tile is-child box">
+            <p class = "questions title">Which of the following is a new route from DFW?</p>
+            <input type = "radio" id = "mc" name = "question6" value = "Heartford"> Des Moines, IA<br>
+            <input type = "radio" id = "mc" name = "question6" value = "Hartford"> Panama City, FL<br>
+            <input type = "radio" id = "mc" name = "question6" value = ""> Des Moines, IA<br>
+            <input type = "radio" id = "mc" name = "question6" value = ""> Austin, TX<br></div>
+          <div class="tile is-child box">
+            <a class="button is-primary is-rounded is-large" id = "button" type = "button" value = "I'm finished!" onclick = "check()">Submit</a>
+            <p class="subtitle is-4 is-pulled-right" id="number_correct"></p></div>
+        </form>
       </div>
-      <div class="tile is-child box">
-        <p class = "questions title">When was American airlines first founded?</p>
-        <input type = "radio" id = "mc" name = "question2" value = "Hartford"> 1906<br>
-        <input type = "radio" id = "mc" name = "question2" value = "Heartford"> 1975<br>
-      </div>
-      <div class="tile is-child box">
-        <p class = "questions title">How many airplanes does AA own?</p>
-        <input type = "radio" id = "mc" name = "question3" value = "Heartford"> 450<br>
-        <input type = "radio" id = "mc" name = "question3" value = "Hartford"> 1500<br>
-      </div>
-      <div class="tile is-child box">
-        <p class = "questions title">Which one of these cities is the hub of AA</p>
-        <input type = "radio" id = "mc" name = "question4" value = "Hartford"> Ft. Worth<br>
-        <input type = "radio" id = "mc" name = "question4" value = "Heartford"> Atlanta<br>
-      </div>
-      <div class="tile is-child box">
-        <p class = "questions title">How many countries does AA fly to?</p>
-        <input type = "radio" id = "mc" name = "question5" value = "Heartford"> 96<br>
-        <input type = "radio" id = "mc" name = "question5" value = "Hartford"> 55<br>
-      </div>
-      <div class="tile is-child box">
-        <a class="button is-primary is-rounded is-large" id = "button" type = "button" value = "I'm finished!" onclick = "check()">Submit</a>
-        <p class="subtitle is-1 is-pulled-right" id="number_correct"></p>
-      </div>
-  </div>
-</div>
-</form>
-</div>
-</div>
+    </div>
   </section>
-
 </body>
 </html>
