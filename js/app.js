@@ -39,7 +39,7 @@ function myFunction(){
 	localStorage.setItem("passOver", strPoint);
 	
 	//flight status with flight Aware
-	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure ><img src="img/status.jpg" ></figure></a>'; 
+	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure><img src="img/status.jpg" ></figure></a>'; 
 	localStorage.setItem("flightStatus", strflightStatus);
 
 	//origin and destination 

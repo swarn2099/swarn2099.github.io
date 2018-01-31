@@ -8,7 +8,6 @@
   <script src="js/app.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <script src="js/time.js"></script>
 
   <!--CSS Files-->
   <link rel="stylesheet" href="css/animate.css">
@@ -17,6 +16,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bulma.css">
   <link rel="stylesheet" href="css/weather.css">
+
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -67,7 +67,7 @@
 </div>
 
 <div class="tile is-ancestor is-primary">
-  <div class="tile is-vertical is-8  is-primary">
+  <div class="tile is-vertical is-8 is-primary">
     <div class="tile is-primary">
       <div class="tile is-parent is-vertical is-primary">
         <article class="tile is-child box animated fadeInLeft is-primary">
@@ -78,8 +78,8 @@
           <script  src="js/app.js"></script>
         </article>
       </div>
-     <div class="tile is-parent animated pulse is-dark">
-        <article class="tile is-child is-dark">
+     <div class="tile is-parent animated pulse">
+        <article class="tile is-child box">
           <p id="flightaware" class="animated bounceInDown"></p>
         </article>
       </div>
@@ -111,10 +111,10 @@
       <div class="content">
         <p class="title has-text-info">Air Trivia</p>
         <hr color="black">
-          <figure class="image"><a href="quiz.html"><img src="img/airplane.jpg" class="image is-128x128 "></a></figure>
+          <figure class="image"><a href="quiz.html"><img src="img/airplane.jpg" class="image is-128x128 animated infinite tada"></a></figure>
           <hr color="black">
           <p class="subtitle is-4">Answer questions and get a chance to win a free meal or miles!</p><hr color="black"><br>
-          <div class="columns">
+          <div class="columns is-mobile">
             <div class="column">
               <p class="title is-2" id="timer"></p>
             </div>
@@ -127,28 +127,51 @@
   </div>
 </div>
 </div>
+  <br>
+<section class="container ">
+  <div class="card animated lightSpeedIn is-hidden-desktop is-mobile is-centered"><br>
+    <div class="columns is-mobile is-centered is-gapless">
+      <div class="column is-narrow">
+        <figure class="image is-64x64">
+          <a href="https://www.facebook.com/AmericanAirlines/"><img src="img/facebook.png" class="animated infinite pulse"></a>
+        </figure>
+      </div>
+      <div class="column is-narrow">
+        <figure class="image is-64x64 ">
+         <a href="https://twitter.com/AmericanAir?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="img/twitter.png" class="animated infinite pulse"></a>
+        </figure>    
+      </div>
+      <div class="column is-narrow">      
+        <figure class="image is-64x64 ">
+          <a href="https://www.instagram.com/americanair/?hl=en"><img src="img/instagram.png" class="animated infinite pulse"></a>
+        </figure>  
+      </div>
+    </div> 
+    <br>
+  </div>
+</section> <br>
 </body>
+<script> 
+  loadApp();
+</script>
+
+
 
 <script type="text/javascript">
 tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-
 function GetClock(){
 var d=new Date();
 var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
 var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
 if(nhour==0){ap=" AM";nhour=12;}
 else if(nhour<12){ap=" AM";}
 else if(nhour==12){ap=" PM";}
 else if(nhour>12){ap=" PM";nhour-=12;}
-
 if(nmin<=9) nmin="0"+nmin;
 if(nsec<=9) nsec="0"+nsec;
-
 document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
 }
-
 window.onload=function(){
 GetClock();
 setInterval(GetClock,1000);
@@ -160,7 +183,6 @@ setInterval(GetClock,1000);
     document.getElementById('timer').innerHTML =
   20 + ":" + 00;
 startTimer();
-
 function startTimer() {
   var presentTime = document.getElementById('timer').innerHTML;
   var timeArray = presentTime.split(/[:]+/);
@@ -173,12 +195,11 @@ function startTimer() {
     m + ":" + s;
   setTimeout(startTimer, 1000);
 }
-
 function checkSecond(sec) {
   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
   if (sec < 0) {sec = "59"};
   return sec;
 }
-
   </script>
+
 </html>
