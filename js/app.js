@@ -1,7 +1,14 @@
 function myFunction(){
+	//The greeting
 	var str2 = document.getElementById("first");
 	var str3 = document.getElementById("last");
-	var flightNumber = document.getElementById("flight");
+	var flightNumber = document.getElementById('flightNumber');
+	var final = "Hello " + str2.value + ' ' + str3.value;
+	localStorage.setItem("greeting", final);
+	//flight number 
+	var flightResult = "AA " +  flightNumber.value;
+	localStorage.setItem("flightNumber", flightResult);	
+	//things to look out for
 	   	if (flightNumber.value == "1246") {
 	   		var strPoint = "This route crosses the Grand Canyon<br><br>This route crosses Las Vegas<br><br>This route crosses Lubbock";
 	   	}
@@ -29,47 +36,63 @@ function myFunction(){
 	   	else if (flightNumber.value == "2761") {
 	   		var strPoint = "Passes by St. Loius<br><br>Passes by Mississippi River<br><br>Passes by Fayetteville";
 	   	}
-
-	   	localStorage.setItem("passOver", strPoint);
-	var flightResult = "AA " +  flightNumber.value;
-	localStorage.setItem("flightNumber", flightResult);
-
-	var final = "Hello " + str2.value + ' ' + str3.value;
-	localStorage.setItem("result", final);
-
-	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure class="image is-4by3"><img src="img/status.jpg"></figure></a>'; 
+	localStorage.setItem("passOver", strPoint);
+	
+	//flight status with flight Aware
+	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure ><img src="img/status.jpg" ></figure></a>'; 
 	localStorage.setItem("flightStatus", strflightStatus);
 
+	//origin and destination 
+	var endpoint = "https://aa-team-jerry.herokuapp.com/flight?flightNumber=";
+	var endpoint2 = (endpoint + flightNumber.value + "&" + "date=2018-01-29");
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", endpoint2, false);
+    xmlHttp.send(null);
+    var json = xmlHttp.responseText, obj = JSON.parse(json);
+    var originl = obj.destination;
+    localStorage.setItem("weather", originl);
+    var test = obj.origin + " to " + obj.destination;
+   	localStorage.setItem("orgin", test);
 
-
-		var endpoint = "https://aa-team-jerry.herokuapp.com/flight?flightNumber=";
-		var endpoint2 = (endpoint + flightNumber.value + "&" + "date=2018-01-29");
-	    var xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open("GET", endpoint2, false);
-	    xmlHttp.send(null);
-	    var json = xmlHttp.responseText, obj = JSON.parse(json);
-	    var test = obj.origin + " to " + obj.destination;
-	    var status = obj.flightStatus;
-	   	localStorage.setItem("orgin", test);
-	   	localStorage.setItem("flightStatusCurrent", status);
-
-
-
+   	//flightStatus with Api
+   	var status = obj.flightStatus;
+   	localStorage.setItem("flightStatusCurrent", status);
 }
 
 function loadApp() {
-	var storedValue = localStorage.getItem('result');
-	var storedValue2 = localStorage.getItem('flightNumber');
-	var storedValue3 = localStorage.getItem('flightStatus');
-	var storedValue4 = localStorage.getItem('orgin');
-	var storedValue5 = localStorage.getItem('passOver');
-	var storedValue6 = localStorage.getItem('flightStatusCurrent');
-	document.getElementById('demo').innerHTML = storedValue;
-	document.getElementById('demo2').innerHTML = storedValue2;
-	document.getElementById('demo3').innerHTML = storedValue3;
-	document.getElementById('orgin').innerHTML = storedValue4;
-	document.getElementById('poi').innerHTML = storedValue5;
-	document.getElementById('currentStatus').innerHTML = storedValue6;
+	var greeting = localStorage.getItem('greeting');
+	var flightNumberResult = localStorage.getItem('flightNumber');
+	var thingsOfInterest = localStorage.getItem('passOver');
+	var flightAware = localStorage.getItem('flightStatus');
+	var travelOrgtoDest = localStorage.getItem('orgin');
+	var flightStatusResult = localStorage.getItem('flightStatusCurrent');
+
+	document.getElementById('greeting').innerHTML = greeting;
+	document.getElementById('flightNumberResult').innerHTML = flightNumberResult;
+	document.getElementById('poi').innerHTML = thingsOfInterest;
+	document.getElementById('flightaware').innerHTML = flightAware;
+	document.getElementById('orgin').innerHTML = travelOrgtoDest;
+	document.getElementById('currentStatus').innerHTML = flightStatusResult;
 
 
 }
+// v3.1.0
+//Docs at http://simpleweatherjs.com
+$(document).ready(function() {
+  $.simpleWeather({
+    location: localStorage.getItem('weather'),
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
+});
