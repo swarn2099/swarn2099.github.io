@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>flyAmerican.today</title>
-  <link rel="icon" href="img/airplane.jpg">
+  <link rel="icon" href="img/airplane.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/app.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
@@ -45,6 +45,7 @@
     <article class="tile is-child box animated fadeInLeft">
       <p class="title has-text-danger is-bold" id="greeting"></p><hr color="black"><br><h2 class="subtitle has-text-grey-darker">Thank you for choosing American Airlines</h2>
 <hr color="black"><br>
+        <p class="subtitle is-6"><b>It is currently</b></p>
         <p id="clockbox"></p>
     </article>
   </div>
@@ -52,9 +53,10 @@
     <article class="tile is-child box animated fadeInRight">
       <p class="title has-text-centered has-text-info  " id="flightNumberResult"></p>
       <hr color="black"><br>
-      <p class="subtitle has-text-centered" id="orgin"></p>
+      <p class="subtitle is-4 has-text-centered" id="orgin"></p>
       <hr color="black">
-      <p class="subtitle has-text-centered has-text-warning  " id="currentStatus"></p><hr color="black">
+      <p class="subtitle is-4 has-text-centered has-text-warning  " id="currentStatus"></p>
+      <hr color="black">
     </article>
   </div>
   <div class="tile is-parent">
@@ -111,7 +113,7 @@
       <div class="content">
         <p class="title has-text-info">Air Trivia</p>
         <hr color="black">
-          <figure class="image"><a href="quiz.html"><img src="img/airplane.jpg" class="image is-128x128 animated infinite tada"></a></figure>
+          <figure class="image"><a href="quiz.html"><img src="img/airplane.png" class="image is-128x128 animated infinite bounce"></a></figure>
           <hr color="black">
           <p class="subtitle is-4">Answer questions and get a chance to win a free meal or miles!</p><hr color="black"><br>
           <div class="columns is-mobile">
@@ -119,7 +121,7 @@
               <p class="title is-2" id="timer"></p>
             </div>
             <div class="column ">
-              <a class="button is-rounded is-large is-primary has-text-light" href="quiz.html">Start Quiz</a>
+              <a class="button is-rounded is-large is-primary has-text-light" href="quiz.html"><span class="animated infinite flip">Start Quiz</span></a>
             </div>
           </div>
       </div>

@@ -1,0 +1,49 @@
+.donate-now {
+     list-style-type:none;
+     padding:0;
+}
+
+.donate-now li {
+    float: left;
+    width: 200px;
+    height: 100px;
+    position:relative;
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    background-color: white;
+
+}
+
+.donate-now label, .donate-now input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.donate-now input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+
+.donate-now input[type="radio"]:checked + label {
+    background: #C0C0C0;
+    color: white;
+    opacity: 0.5;
+}
+
+.donate-now label {
+     padding:5px;
+     border:5px solid #fff; 
+     cursor:pointer;
+
+}
+
+.donate-now label:hover {
+     background: #C0C0C0;
+     opacity: 0.5;
+     font: white;
+}

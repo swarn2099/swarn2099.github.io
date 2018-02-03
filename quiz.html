@@ -5,10 +5,13 @@
     <title>flyAmerican.today | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/airplane.jpg">
-    <script src="js/main.js"></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script type='text/javascript' src='js/quiz.js'></script>
+    <script type='text/javascript' src='js/timer.js'></script>
     <!--CSS Files-->
 
-    <link rel="stylesheete" href="css/radio.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/timer.css">
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/scroll.css">
@@ -25,56 +28,82 @@
       <div class="card-content">
         <div class="columns">
           <div class="column">
-            <a href="index.html"><h1 class="title animated fadeInRightBig ">fly<font color="red">American</font>.<font color="blue">today</font></h1></a>
+            <a href="flyamerican.html"><h1 class="title animated fadeInRightBig">fly<font color="red">American</font>.<font color="blue">today</font></h1></a>
           </div>
           <div class="column">
-            <a href="https://www.aa.com/homePage.do"><img src="aa-logo.png" class="is-pulled-right "></a>
+            <img src="img/aa-logo.png" class="is-pulled-right ">
           </div>
         </div>
-        <hr color="black">
-        <form id = "quiz" name = "quiz">
-          <div class="tile is-child box">
-            <p class = "questions title">How many miles per dollar do you get with AA Advantage Platinum?</p>
-            <input type = "radio" id = "mc" name = "question1" value = "$5" class="has-text-weight-bold "> 5 miles<br>
-            <input type = "radio" id = "mc" name = "question1" value = "Heartford"> 8 miles<br>
-            <input type = "radio" id = "mc" name = "question1" value = "Hartford"> 9 miles<br>
-            <input type = "radio" id = "mc" name = "question1" value = "Heartford"> 12 miles<br></div>
-          <div class="tile is-child box">
-            <p class = "questions title">When was American airlines first founded?</p>
-            <input type = "radio" id = "mc" name = "question2" value = "Hartford"> 1906<br>
-            <input type = "radio" id = "mc" name = "question2" value = "Heartford"> 1975<br>
-            <input type = "radio" id = "mc" name = "question2" value = ""> 1956<br>
-            <input type = "radio" id = "mc" name = "question2" value = ""> 1984<br></div>
-          <div class="tile is-child box">
-            <p class = "questions title">How many airplanes does AA own?</p>
-            <input type = "radio" id = "mc" name = "question3" value = "Heartford"> 450<br>
-            <input type = "radio" id = "mc" name = "question3" value = "Hartford"> 1500<br>
-            <input type = "radio" id = "mc" name = "question3" value = ""> 50<br>
-            <input type = "radio" id = "mc" name = "question3" value = ""> 568<br></div>
-          <div class="tile is-child box">
-            <p class = "questions title">Which one of these cities is the hub of AA</p>
-            <input type = "radio" id = "mc" name = "question4" value = "Hartford"> Ft. Worth<br>
-            <input type = "radio" id = "mc" name = "question4" value = "Heartford"> Atlanta<br>
-            <input type = "radio" id = "mc" name = "question4" value = ""> Dallas<br>
-            <input type = "radio" id = "mc" name = "question4" value = ""> Houston<br></div>
-          <div class="tile is-child box">
-            <p class = "questions title">How many countries does AA fly to?</p>
-            <input type = "radio" id = "mc" name = "question5" value = "Heartford"> 96<br>
-            <input type = "radio" id = "mc" name = "question5" value = "Hartford"> 55<br>
-            <input type = "radio" id = "mc" name = "question5" value = ""> 43<br>
-            <input type = "radio" id = "mc" name = "question5" value = ""> 89<br></div>
-          <div class="tile is-child box">
-            <p class = "questions title">Which of the following is a new route from DFW?</p>
-            <input type = "radio" id = "mc" name = "question6" value = "Heartford"> Des Moines, IA<br>
-            <input type = "radio" id = "mc" name = "question6" value = "Hartford"> Panama City, FL<br>
-            <input type = "radio" id = "mc" name = "question6" value = ""> Des Moines, IA<br>
-            <input type = "radio" id = "mc" name = "question6" value = ""> Austin, TX<br></div>
-          <div class="tile is-child box">
-            <a class="button is-primary is-rounded is-large" id = "button" type = "button" value = "I'm finished!" onclick = "check()">Submit</a>
-            <p class="subtitle is-4 is-pulled-right" id="number_correct"></p></div>
-        </form>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="card animated fadeInUpBig is-half">
+      <div class="card-content">
+        <div id='quiz'></div>
+        </div>
       </div>
     </div>
   </section>
+
+  <br>
+
+  <section class="container">
+    <div class="card animated fadeInUpBig is-half">
+      <div class="card-content">
+        <div class="columns">
+          <div class="column is-half">
+            <section class="hero">
+              <div class="hero-body button is-danger" id="next">
+                <div class="container">
+                  <h1 class="title has-text-light">Next</h1>
+                </div>
+              </div>
+            </section>
+          </div>
+        <div class="column is-half">
+          <section class="hero">
+            <div class="hero-body button is-link ">
+              <div class="container">
+                <h1 class="title has-text-light">Previous</h1>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section><br>
+  <section class="container">
+    <div class="columns is-hidden-mobile">
+      <div class="column">
+        <div class="card animated fadeInUpBig ">
+          <div class="card-content">
+            <div id="clockdiv" >
+              <div>
+                <span class="minutes"></span>
+                <div class="smalltext">Minutes</div>
+              </div>
+              <div>
+                <span class="seconds"></span>
+                <div class="smalltext">Seconds</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<div class="column is-dark">
+        <div class="card animated fadeInUpBig is-dark">
+          <div class="card-content is-dark">
+            <figure class="image"><img src="img/aa-logo.png" class="image"></figure><br><br><br><br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
 </body>
+<script type='text/javascript' src='js/timer.js'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script><script type='text/javascript' src='js/quiz.js'></script>
 </html>
