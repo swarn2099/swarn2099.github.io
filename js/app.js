@@ -1,98 +1,94 @@
-function myFunction(){
-	//The greeting
-	var str2 = document.getElementById("first");
-	var str3 = document.getElementById("last");
-	var flightNumber = document.getElementById('flightNumber');
-	var final = "Hello " + str2.value + ' ' + str3.value;
-	localStorage.setItem("greeting", final);
-	//flight number 
-	var flightResult = "AA " +  flightNumber.value;
-	localStorage.setItem("flightNumber", flightResult);	
-	//things to look out for
-	   	if (flightNumber.value == "1246") {
-	   		var strPoint = "This route crosses the Grand Canyon<br><br>This route crosses Las Vegas<br><br>This route crosses Lubbock";
-	   	}
-	   	else if (flightNumber.value == "1352") {
-	   		var strPoint = "This route crosses the Gulf of Mexico<br><br>This route crosses by New Orleans<br><br>This route is near Mojave Desert";
-	   	}
-	   	else if (flightNumber.value == "130") {
-	   		var strPoint = "This route crosses the Great Lakes<br><br>This route crosses Cleveland<br><br>This route crosses Detroit";
-	   	}
-		else if (flightNumber.value == "1776") {
-	   		var strPoint = "Passes by Nashville<br><br>Passes by Washington DC<br><br>Passes by Mississippi River";
-	   	}
-	   	else if (flightNumber.value == "750") {
-	   		var strPoint = "Passes by Grand Canyon<br><br>Passes by Kansas City<br><br>Passes by Columbus";
-	   	}
-	   	else if (flightNumber.value == "2493") {
-	   		var strPoint = "Passes by Statue of Liberty<br><br>Passes by Atlantic City<br><br>Passes by Nortfolk";
-	   	}
-	   	else if (flightNumber.value == "354") {
-	   		var strPoint = "Passes by Washington D.C.<br><br>Passes by Nortfolk<br><br>Passes by Wilmington";
-	   	}
-		else if (flightNumber.value == "2257") {
-	   		var strPoint = "Passes by Grand Canyon<br><br>Passes by Colorado Springs<br><br>Passes by Rocky Mountains";
-	   	}
-	   	else if (flightNumber.value == "2761") {
-	   		var strPoint = "Passes by St. Loius<br><br>Passes by Mississippi River<br><br>Passes by Fayetteville";
-	   	}
-	localStorage.setItem("passOver", strPoint);
-	
-	//flight status with flight Aware
-	var strflightStatus = '<a href="https://flightaware.com/live/flight/AA' + flightNumber.value + '" target="_blank"><figure><img src="img/status.jpg" ></figure></a>'; 
-	localStorage.setItem("flightStatus", strflightStatus);
+var map, infoWindow;
 
-	//origin and destination 
-	var endpoint = "https://aa-team-jerry.herokuapp.com/flight?flightNumber=";
-	var endpoint2 = (endpoint + flightNumber.value + "&" + "date=2018-01-29");
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", endpoint2, false);
-    xmlHttp.send(null);
-    var json = xmlHttp.responseText, obj = JSON.parse(json);
-    var originl = obj.destination;
-    localStorage.setItem("weather", originl);
-    var test = obj.origin + " to " + obj.destination;
-   	localStorage.setItem("orgin", test);
-
-   	//flightStatus with Api
-   	var status = obj.flightStatus;
-   	localStorage.setItem("flightStatusCurrent", status);
-}
-
-function loadApp() {
-	var greeting = localStorage.getItem('greeting');
-	var flightNumberResult = localStorage.getItem('flightNumber');
-	var thingsOfInterest = localStorage.getItem('passOver');
-	var flightAware = localStorage.getItem('flightStatus');
-	var travelOrgtoDest = localStorage.getItem('orgin');
-	var flightStatusResult = localStorage.getItem('flightStatusCurrent');
-
-	document.getElementById('greeting').innerHTML = greeting;
-	document.getElementById('flightNumberResult').innerHTML = flightNumberResult;
-	document.getElementById('poi').innerHTML = thingsOfInterest;
-	document.getElementById('flightaware').innerHTML = flightAware;
-	document.getElementById('orgin').innerHTML = travelOrgtoDest;
-	document.getElementById('currentStatus').innerHTML = flightStatusResult;
-
-
-}
-// v3.1.0
-//Docs at http://simpleweatherjs.com
-$(document).ready(function() {
-  $.simpleWeather({
-    location: localStorage.getItem('weather'),
-    woeid: '',
-    unit: 'f',
-    success: function(weather) {
-      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
-      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
-      html += '<li class="currently">'+weather.currently+'</li>';
-      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
-  
-      $("#weather").html(html);
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: 32.985762,
+      lng: -96.750099
     },
-    error: function(error) {
-      $("#weather").html('<p>'+error+'</p>');
-    }
+    zoom: 18,
+    disableDefaultUI: true
+
   });
-});
+  var contentString = '<h1 class="title is-4 pink-text">Your Current Location</h1>' + '<hr color="black">';
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      map.setCenter(pos);
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+// Gets object data from Firebase
+function getData() {
+  var ref = firebase.database().ref('Event');
+  console.log(ref);
+  ref.on('value', gotData, errData);
+}
+
+function attachSecretMessage(marker, totalContentString) {
+  var infowindow = new google.maps.InfoWindow({
+    content: totalContentString
+  });
+
+  marker.addListener('click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
+}
+var totalContentString = [];
+function gotData(data) {
+  var values = data.val();
+  var keys = Object.keys(values);
+  console.log("Attempted to get all data from Firebase");
+  for (var i = 0; i < keys.length; i++) {
+    var k = keys[i];
+    var eventName = values[k].eventName;
+    var description = values[k].description;
+    var date = values[k].date;
+    var location = values[k].location;
+    var startTime = values[k].startTime;
+    var endTime = values[k].endTime;
+    var longitude = values[k].longCoord;
+    var latitude = values[k].latCoord;
+    var pos = {
+      lat: latitude,
+      lng: longitude
+    };
+    var contentString = '<h6 class="is-size-5-mobile has-text-centered has-text-weight-bold has-text-primary">' + eventName + '</h6><br>'+
+      '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light">' + description + '</h6>' + '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light is-italic">'
+       + startTime + ' -  ' + endTime +
+       '</h6><br>' +'<a class="button is-rounded is-link"><span class="">Pool</span></a>'+'&nbsp <a class="button is-rounded is-success"><span class="">Map</span></a>';
+    totalContentString.push(contentString);
+    for(var j = 0; j < totalContentString.length; j++) {
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+      });
+      attachSecretMessage(marker, totalContentString[i]);
+    }
+  }
+}
+window.onload = gotData;
+function errData(err) {
+  console.log('Error occured!');
+  console.log(err);
+}
