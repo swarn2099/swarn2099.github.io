@@ -1,10 +1,87 @@
-html {
-    overflow-y: hidden;
-    overflow-x: hidden;
-    background-image: url("../img/bg.png");
-    opacity: 0.90;
+.sidenav{
+width: 100px;
 }
-body{
-  overflow-x: hidden;
-  overflow-y: hidden;
+body {
+  background-image: url("../img/city.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-attachment: fixed;
+  font-family: 'Montserrat';
+  overflow-x: hidden;;
+
+}
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+ #rcorners1 {
+   border-radius: 15px;
+   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+   height: 500px;
+   width: 500px;
+   background-color: #fff;
+   padding: 10px;
+ }
+#rcorners2 {
+  border-radius: 15px;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+}
+#rcorners3 {
+  border-radius: 15px;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+  margin-top: 500px;
+}
+#imgCard {
+  border-radius: 15px;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+  width: 600px;
+  height: 750px;
+}
+.imgCard2 {
+  border-radius: 15px;
+  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+  width: 250px;
+  height: 300px;
+  }
+  .imgCard2padding{
+    margin-right: 80px;
+  }
+.top-left {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.top-left2 {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  color: white;
+  font-family: 'Montserrat';
+}
+.top-right{
+  position: absolute;
+  top: 5%;
+  left: 62%;
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.bottom-left {
+  position: absolute;
+  top: 100%;
+  left: 20%;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  color: white;
 }
