@@ -33,43 +33,47 @@
     firebase.initializeApp(config);
   </script>
 </head>
+<div class="navbar-fixed">
 <nav>
   <div class="nav-wrapper white black-text">
-    <a href="#" class="brand-logo center"><span class="teal-text text-lighten-2"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin black-text"></span></a>
+    <a href="#" class="brand-logo center"><span class="teal-text text-lighten-2 heavy"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin black-text hide-on-med-and-down">Pool</span></a>
   </div>
 </nav>
+</div>
+
 <body>
-<div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
-  <div class="valign" style="width:100%;">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m6 offset-m3">
-          <div class="card" id="rcorners1">
-            <div class="card-content">
-              <h5 class="center">Login to Pool</h5>
-              <form>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+  <div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
+    <div class="valign" style="width:100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6 offset-m3">
+            <div class="card" id="rcorners1">
+              <div class="card-content">
+                <h5 class="center">Login to Pool</h5>
+                <form>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="password" type="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
                   </div>
-                </div>
-              </form>
-            </div>
-            <div class="row center">
-              <div class="input-field col s12">
-                <a class="waves-effect waves-light btn" onclick="login()">Login</a>
+                </form>
               </div>
-            </div>
-            <div class="row center">
-              <div class="input-field col s12">
-                Don't have an account?<a href="create.html"> &nbspCreate one here</a>
+              <div class="row center">
+                <div class="input-field col s12">
+                  <a class="waves-effect waves-light btn-large color-page" onclick="login()"><i class="material-icons left">pool</i>Login</a>
+                </div>
+              </div>
+              <div class="row center">
+                <div class="input-field col s12">
+                  Don't have an account?<a href="create.html"> &nbspCreate one here</a>
+                </div>
               </div>
             </div>
           </div>
@@ -77,64 +81,34 @@
       </div>
     </div>
   </div>
-</div>
 </body>
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      window.open("home.html", "_self");
+      var displayName = user.displayName;
+      var email = user.email;
+      console.log(email);
+      console.log(displayName);
+      // ...
+    }
+  });
 
-  <!-- <div class="section container centeredSignIn">
-    <div id="rcorners1" class="">
-      <h5 class="center">Login to Pool</h5>
-        <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <div class="row center">
-              <div class="input-field col s12">
-                <a class="waves-effect waves-light btn" onclick="login()">Login</a>
-              </div>
-            </div>
-            <div class="row center">
-              <div class="input-field col s12">
-                Don't have an account?<a href="create.html"> &nbspCreate one here</a>
-              </div>
-            </div>
-        </form>
-      </div>
-    </div> -->
-  <script>
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        window.open("../index.html", "_self");
-        var displayName = user.displayName;
-        var email = user.email;
-        console.log(email);
-        console.log(displayName);
-        // ...
-      }
-    });
-    function login() {
-      var email = document.getElementById("email").value;
-      var password = document.getElementById('password').value;
-      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message
-        M.toast({
-          html: 'Incorrect Email or Password',
-          classes: 'rounded red white-text'
-        });
+  function login() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById('password').value;
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message
+      M.toast({
+        html: 'Incorrect Email or Password',
+        classes: 'rounded red white-text'
       });
-    };
-  </script>
-  <script type="text/javascript" src="../js/materialize.min.js"></script>
+    });
+  };
+</script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
 
 </html>

@@ -1,12 +1,11 @@
 body {
   min-height: 700px;
   font-family: 'Montserrat';
-  overflow-x: hidden;
-  background: linear-gradient(45deg, #26a69a, #00a6b4, #00a4cf, #009fe6, #2196f3);
+  background: linear-gradient(60deg, #051937, #004d7a, #008793,  #a8eb12);
   width: 100%;
   height: calc(100% + 130px);
   position: relative;
-  animation: pastelRainbow 5s ease infinite;
+  animation: pastelRainbow 10s ease infinite;
   background-size: 400% 400%;
 }
  #rcorners1 {
@@ -18,8 +17,12 @@ body {
  }
  .color-page {
      background: linear-gradient(45deg, #00B2E1, #9791B5, #f1658a);
-     width: 100%;
-     height: calc(100% + 130px);
+     position: relative;
+     animation: pastelRainbow 15s ease infinite;
+     background-size: 400% 400%;
+ }
+ .color-page2 {
+     background: linear-gradient(45deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
      position: relative;
      animation: pastelRainbow 15s ease infinite;
      background-size: 400% 400%;
@@ -32,4 +35,9 @@ body {
     100% {
       background-position: 0% 50%;  }
 }
-background-image: linear-gradient(to right top, #26a69a, #00a6b4, #00a4cf, #009fe6, #2196f3);
+.btn-large {
+    border-radius: 30px;
+}
+.btn {
+    border-radius: 30px;
+}

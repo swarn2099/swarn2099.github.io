@@ -35,11 +35,13 @@
     firebase.initializeApp(config);
   </script>
 </head>
+<div class="navbar-fixed">
 <nav>
   <div class="nav-wrapper white black-text">
-    <a href="#" class="brand-logo center"><span class="teal-text text-lighten-2"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin black-text"></span></a>
+    <a href="#" class="brand-logo center"><span class="teal-text text-lighten-2"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin black-text hide-on-med-and-down">Pool</span></a>
   </div>
 </nav>
+</div>
 
 <body>
   <div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
@@ -73,7 +75,7 @@
               </div>
               <div class="row center">
                 <div class="input-field col s12">
-                  <a class="waves-effect waves-light btn" onclick="createUser()">Create Account</a>
+                  <a class="waves-effect waves-light btn-large color-page" onclick="createUser()"><i class="material-icons left">pool</i>Create Account</a>
                 </div>
               </div>
               <div class="row center">
@@ -93,12 +95,10 @@
     var user = firebase.auth().currentUser;
 
     user.updateProfile({
-      displayName: document.getElementById('name').value,
-      school: document.getElementById('school').value
+      displayName: document.getElementById('name').value
     }).then(function() {
       console.log("User Profile Updated");
-      console.log(school);
-      window.open("../index.html", "_blank");
+      window.open("home.html", "_self");
 
     }).catch(function(error) {
       // An error happened.
