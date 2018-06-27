@@ -59,6 +59,8 @@ function getPreviewEvent() {
   //TIME
   var startTime = document.getElementById("starttime");
   var endTime = document.getElementById("endtime");
+  var date = document.getElementById("date");
+
   var timePreview = '<h6>' + startTime.value + ' - ' + endTime.value + '</h6><h6>' + date.value + '</h6>';
   var timeValuePreview = document.getElementById("timeValuePreview");
   timeValuePreview.innerHTML = timePreview;
