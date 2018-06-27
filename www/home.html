@@ -108,6 +108,10 @@
       console.log(school);
       var welcome = document.getElementById("welcomeMessage");
       welcome.innerHTML = "Welcome " + displayName + " ";
+      M.toast({
+        html: 'Welcome ' + displayName,
+        classes: 'rounded color-page2 white-text'
+      });
        // ...
     } else {
       // User is signed out.
@@ -117,7 +121,7 @@
     function signOut() {
       firebase.auth().signOut().then(function() {
         console.log('Signed Out');
-        window.location.href="signin.html";
+        window.location.href="../index.html";
 
       }, function(error) {
         console.error('Sign Out Error', error);

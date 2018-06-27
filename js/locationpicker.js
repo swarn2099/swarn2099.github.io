@@ -34,7 +34,7 @@ function initMap() {
 function getPreviewEvent() {
   //IMAGE
   var image = document.getElementById("imageLink");
-  var imagePreview = '<img class="activator" src="'+image.value +'"">';
+  var imagePreview = '<img class="reduceheight" src="' + image.value + '"">';
   var imageValuePreview = document.getElementById("imgValuePreview");
   imageValuePreview.innerHTML = imagePreview;
 
@@ -46,13 +46,13 @@ function getPreviewEvent() {
 
   //LOCATION
   var location = document.getElementById("us2-address");
-  var locationSelected = '<h6>'+ location.value +'</h6>';
+  var locationSelected = '<h6>' + location.value + '</h6>';
   var locationPreview = document.getElementById("locationPreview");
   locationPreview.innerHTML = locationSelected;
 
   //EVENT NAME
   var eventName = document.getElementById("eventname");
-  var eventPreview ='<span class="card-title grey-text text-darken-4 activator">'+eventName.value+'<i class="material-icons right">more_vert</i></span>';
+  var eventPreview = '<span class="card-title grey-text text-darken-4 activator">' + eventName.value + '</span>';
   var eventNamePreview = document.getElementById("eventNamePreview");
   eventNamePreview.innerHTML = eventPreview;
 
@@ -67,7 +67,7 @@ function getPreviewEvent() {
 
   //Description
   var description = document.getElementById("description");
-  var descriptionPreview = '<textarea class="materialize-textarea">'+description.value+'</textarea>';
+  var descriptionPreview = '<textarea class="materialize-textarea">' + description.value + '</textarea>';
   var descriptionValuePreview = document.getElementById("descriptionValuePreview");
   descriptionValuePreview.innerHTML = descriptionPreview;
 
@@ -114,25 +114,30 @@ function getFormEvent() {
           location: location.value,
           date: date.value,
           geoPosition: coords,
-          author: user.uid
+          author: user.uid,
+          id: eventName.value
 
         })
         .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-          Materialize.toast('Event Added', 4000, 'rounded teal')
-
-
+          console.log("Document written");
+          M.toast({
+            html: 'Event Added',
+            classes: 'rounded green white-text'
+          });
         })
         .catch(function(error) {
           console.error("Error adding document: ", error);
-          Materialize.toast('Event Added', 4000, 'rounded teal')
+          M.toast({
+            html: 'Event Added',
+            classes: 'rounded red white-text'
+          });
         });
-       // ...
+      // ...
     } else {
       // User is signed out.
       // ...
     }
-    });
+  });
   // db.collection("events").doc(eventName.value).set({
   //     name: eventName.value,
   //     // category: categorySelected.value,
