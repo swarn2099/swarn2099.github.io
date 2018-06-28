@@ -42,7 +42,7 @@
   <li><a href="home.html"><i class="material-icons small">home</i></a></li>
   <li><a href="add.html"><i class="material-icons small">add</i></a></li>
   <li><a href="manage.html"><i class="material-icons small">edit</i></a></li>
-  <li><a href="#!"><i class="material-icons small">notifications_active</i></a></li>
+  <li><a href="#!"><i class="material-icons small">data_usage</i></a></li>
   <li><a href="#!" onclick="signOut()"><i class="material-icons small">hotel</i></a></li>
 </ul>
 <nav>
@@ -62,15 +62,13 @@
     </ul>
   </div>
 </nav>
-<br>
-<div class="row">
-  <div class="col s12">
-    <ul class="tabs white">
+
+      <div class="row">
+        <ul class="tabs white">
       <li class="tab col s6 white"><a href="#test1"><span class="blue-text">SandBox</span></a></li>
       <li class="tab col s6"><a href="#test2" onclick="getPreviewEvent()"><span class="teal-text">Submit</span></a></li>
+    </div>
     </ul>
-  </div>
-</div>
 
 <body class="">
 
@@ -87,7 +85,7 @@
                   <label for="eventname" class="theme"> Event Name </label>
                 </div>
                 <div class="col s12">
-                  <div class="row"><br><br>
+                  <div class="row"><br><br><br>
                     <div class="input-field col s12">
                       <select id="category">
                       <option value="" disabled selected>Pick a Category</option>
@@ -108,7 +106,7 @@
             <div class="card-content black-text">
               <span class="card-title center-align"><b>Location</b></span>
               <div class="row">
-                <div class="col s12 ">
+                <div class="col s12">
                   <div class="input-field col s12">
                     <label for="datepicker">Select Date</label>
                     <input type="text" class="datepicker" id="date">
@@ -148,7 +146,7 @@
                     Description
                     <hr/>
                     <div class="editor"></div>
-                    <textarea hidden class="markdown" id="description"></textarea>
+                    <textarea hidden class="markdown" id="description" rows="40"></textarea>
                   </div>
                   <div class="col  s11 m4 push-m1">
                     Final Step
@@ -193,21 +191,38 @@
           <div class="card-reveal activator container">
             <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">close</i></span>
             <div class="row">
-              <div class="col s6">
+              <div class="col s12 activator">
                 <h5 class="left-align"><b>Location</b></h5>
-              </div>
-              <div class="col s6">
-                <h5 class="right-align"><b>Time & Date</b></h5>
               </div>
             </div>
             <div class="row">
-              <div class="col s7">
-                <div class="row">
-                  <div id="locationPreview"></div>
+                  <div class="left-align" id="locationPreview"></div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <h5 class="left-align"><b>Time & Date</b></h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 ">
+                <div class="input-field col s12">
+                  <label for="datepicker"></label>
+                  <input type="text" class="datepicker" id="datePreview">
                 </div>
               </div>
-              <div class="col s5 right-align" id="timeValuePreview">
-                <!--Time Goes Here-->
+            </div>
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="input-field col s12">
+                  <label for="timepicker"></label>
+                  <input type="text" class="timepicker" id="starttimePreview">
+                </div>
+              </div>
+              <div class="col  s12 m6">
+                <div class="input-field col s12">
+                  <label for="timepicker"></label>
+                  <input type="text" class="timepicker" id="endtimePreview">
+                </div>
               </div>
             </div>
             <div class="row">

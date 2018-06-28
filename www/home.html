@@ -32,7 +32,7 @@
   <li><a href="home.html"><i class="material-icons small">home</i></a></li>
   <li><a href="add.html"><i class="material-icons small">add</i></a></li>
   <li><a href="manage.html"><i class="material-icons small">edit</i></a></li>
-  <li><a href="#!"><i class="material-icons small">notifications_active</i></a></li>
+  <li><a href="#!"><i class="material-icons small">data_usage</i></a></li>
   <li><a href="#!" onclick="signOut()"><i class="material-icons small">hotel</i></a></li>
 </ul>
 
@@ -81,8 +81,8 @@
       <div class="col s12 m6">
         <div class="card waves-effect waves-light" id="rcorners2">
           <div class="card-image">
-            <img src="../img/upcoming.jpeg">
-            <span class="card-title">Upcoming Events</span>
+            <img src="../img/data.jpg">
+            <span class="card-title">Real Time Data</span>
           </div>
         </div>
       </div>
@@ -99,29 +99,30 @@
   <div class="centered">
   </div>
   <script>
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var displayName = user.displayName;
-      var school = user.school;
-      console.log(displayName);
-      console.log(school);
-      var welcome = document.getElementById("welcomeMessage");
-      welcome.innerHTML = "Welcome " + displayName + " ";
-      M.toast({
-        html: 'Welcome ' + displayName,
-        classes: 'rounded color-page2 white-text'
-      });
-       // ...
-    } else {
-      // User is signed out.
-      // ...
-    }
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var school = user.school;
+        console.log(displayName);
+        console.log(school);
+        var welcome = document.getElementById("welcomeMessage");
+        welcome.innerHTML = "Welcome " + displayName + " ";
+        M.toast({
+          html: 'Welcome ' + displayName,
+          classes: 'white black-text'
+        });
+        // ...
+      } else {
+        // User is signed out.
+        // ...
+      }
     });
+
     function signOut() {
       firebase.auth().signOut().then(function() {
         console.log('Signed Out');
-        window.location.href="../index.html";
+        window.location.href = "../index.html";
 
       }, function(error) {
         console.error('Sign Out Error', error);

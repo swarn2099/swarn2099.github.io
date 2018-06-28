@@ -1,3 +1,24 @@
+var lon, latPoint;
+
+$('#us2').locationpicker({
+  location: {
+    latitude: 0,
+    longitude: 0,
+  },
+  addressFormat: 'street_address',
+  enableAutocomplete: true,
+  enableReverseGeocode: true,
+  inputBinding: {
+    locationNameInput: $('#us2-address')
+  },
+  onchanged: function(currentLocation) {
+    var addressComponents = $(this).locationpicker('map').location.addressComponents;
+    lon = currentLocation.longitude;
+    latPoint = currentLocation.latitude;
+  }
+
+});
+
 function queryResults() {
   console.log("The fucntion ran");
   firebase.auth().onAuthStateChanged(function(user) {
@@ -103,7 +124,10 @@ function updateEvent() {
     if (user) {
       var docUpdate = document.getElementById("document");
       var washingtonRef = db.collection("events").doc(docUpdate.value);
-
+      var coords = {
+        latPoint,
+        lon
+      };
       // Set the "capital" field of the city 'DC'
       return washingtonRef.update({
           name: document.getElementById("eventname").value,
@@ -113,6 +137,7 @@ function updateEvent() {
           date: document.getElementById("eventname").value,
           description: document.getElementById("textarea1").value,
           imageURL: document.getElementById("imageUpdate").value,
+          // geoPosition: coords,
         })
         .then(function() {
           console.log("Document successfully updated!");
@@ -166,3 +191,13 @@ function signOut() {
     console.error('Sign Out Error', error);
   });
 }
+(function() {
+  var markDownEl = document.querySelector(".markdown");
+  new MediumEditor(document.querySelector(".editor"), {
+    extensions: {
+      markdown: new MeMarkdown(function(md) {
+        markDownEl.textContent = md;
+      })
+    }
+  });
+})();

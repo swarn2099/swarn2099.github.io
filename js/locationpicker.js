@@ -18,19 +18,6 @@ $('#us2').locationpicker({
   }
 
 });
-
-function initMap() {
-  var uluru = {
-    lat: latPoint,
-    lng: lon
-  };
-  var map = new google.maps.Map(
-    document.getElementById('map'), {
-      center: uluru,
-      disableDefaultUI: true
-    });
-}
-
 function getPreviewEvent() {
   //IMAGE
   var image = document.getElementById("imageLink");
@@ -60,10 +47,12 @@ function getPreviewEvent() {
   var startTime = document.getElementById("starttime");
   var endTime = document.getElementById("endtime");
   var date = document.getElementById("date");
-
-  var timePreview = '<h6>' + startTime.value + ' - ' + endTime.value + '</h6><h6>' + date.value + '</h6>';
-  var timeValuePreview = document.getElementById("timeValuePreview");
-  timeValuePreview.innerHTML = timePreview;
+  var starttimeValuePreview = document.getElementById("starttimePreview");
+  var endtimeValuePreview = document.getElementById("endtimePreview");
+  var dateValuePreview = document.getElementById("datePreview");
+  starttimeValuePreview.value = startTime.value;
+  endtimeValuePreview.value = endTime.value;
+  dateValuePreview.value = date.value;
 
   //Description
   var description = document.getElementById("description");
@@ -122,14 +111,14 @@ function getFormEvent() {
           console.log("Document written");
           M.toast({
             html: 'Event Added',
-            classes: 'rounded green white-text'
+            classes: ' green white-text'
           });
         })
         .catch(function(error) {
           console.error("Error adding document: ", error);
           M.toast({
             html: 'Event Added',
-            classes: 'rounded red white-text'
+            classes: ' red white-text'
           });
         });
       // ...
