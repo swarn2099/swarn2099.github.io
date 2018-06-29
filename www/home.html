@@ -37,13 +37,12 @@
 </ul>
 
 <nav>
-  <div class="nav-wrapper white black-text">
-    <a href="home.html" class="brand-logo center"><span class="teal-text text-lighten-2"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin black-text hide-on-med-and-down">Pool</span></a>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+  <div class="nav-wrapper color-page3 black-text">
+    <a href="home.html" class="brand-logo center"><span class="white-text text-lighten-2"><b>marco</b></span><span class="blue-text heavy">polo </span><span class="thin white-text hide-on-med-and-down">Pool</span></a>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons white-text">menu</i></a>
     <ul class="right hide-on-med-and-down black-text">
       <li>
         <a class="dropdown-trigger black-text" href="#!" data-target="dropdown1" id="welcomeMessage">
-          <div></div><i class="material-icons right">arrow_drop_down</i></a>
       </li>
       <ul id='dropdown1' class='dropdown-content'>
         <li><a href="#!">Account Help</a></li>
@@ -107,7 +106,8 @@
         console.log(displayName);
         console.log(school);
         var welcome = document.getElementById("welcomeMessage");
-        welcome.innerHTML = "Welcome " + displayName + " ";
+        var welcomeMessage = '<span class="white-text">Welcome ' + displayName + '</span><i class="material-icons right white-text">arrow_drop_down</i></a>';
+        welcome.innerHTML = welcomeMessage;
         M.toast({
           html: 'Welcome ' + displayName,
           classes: 'white black-text'

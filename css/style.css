@@ -8,7 +8,12 @@
   animation: pastelRainbow 60s ease infinite;
   background-size: 400% 400%;
 }
-
+.color-page3 {
+  background: linear-gradient(45deg, #051937, #004d7a, #008793);
+  position: relative;
+  animation: pastelRainbow 30s ease infinite;
+  background-size: 400% 400%;
+}
 body {
   min-height: 700px;
   font-family: 'Montserrat';
@@ -17,7 +22,7 @@ body {
   overflow-x: hidden;
   height: calc(100% + 130px);
   position: relative;
-  animation: pastelRainbow 10s ease infinite;
+  animation: pastelRainbow 20s ease infinite;
   background-size: 400% 400%;
 }
 

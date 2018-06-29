@@ -26,7 +26,8 @@ function queryResults() {
       var displayName = user.displayName;
       console.log(displayName);
       var welcome = document.getElementById("welcomeMessage");
-      welcome.innerHTML = "Welcome " + displayName + "    ";
+      var welcomeMessage = '<span class="white-text">Welcome ' + displayName + '</span><i class="material-icons right white-text">arrow_drop_down</i></a>';
+      welcome.innerHTML = welcomeMessage;
       // User is signed in.
       db.collection("events").where("author", "==", user.uid).get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {

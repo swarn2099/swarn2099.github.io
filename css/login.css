@@ -26,6 +26,12 @@ body {
      animation: pastelRainbow 15s ease infinite;
      background-size: 400% 400%;
  }
+ .color-page3 {
+   background: linear-gradient(45deg, #051937, #004d7a, #008793);
+   position: relative;
+   animation: pastelRainbow 30s ease infinite;
+   background-size: 400% 400%;
+ }
 @keyframes pastelRainbow {
     0% {
       background-position: 0% 50%; }
