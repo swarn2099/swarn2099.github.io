@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <title>Join Pool | Pool</title>
+
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -71,6 +73,14 @@
                       <label for="name">Name</label>
                     </div>
                   </div>
+                  <div class="input-field col s12">
+                    <select id="city">
+                      <option value="" disabled selected>Choose your City</option>
+                      <option value="Austin">Austin</option>
+                      <option value="Dallas">Dallas</option>
+                      <option value="Houston">Houston</option>
+                    </select>
+                  </div>
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="email" type="email" class="validate">
@@ -105,9 +115,11 @@
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     var user = firebase.auth().currentUser;
-
+    var city = document.getElementById("city");
+    var citySelected = city.options[city.selectedIndex].value;
     user.updateProfile({
-      displayName: document.getElementById('name').value
+      displayName: document.getElementById('name').value,
+      photoURL: citySelected
     }).then(function() {
       console.log("User Profile Updated");
       window.open("home.html", "_self");

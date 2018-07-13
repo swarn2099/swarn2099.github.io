@@ -21,15 +21,15 @@ $('#us2').locationpicker({
 function getPreviewEvent() {
   //IMAGE
   var image = document.getElementById("imageLink");
-  var imagePreview = '<img class="reduceheight" src="' + image.value + '"">';
+  var imagePreview = '<img class="reduceheight" src="'+image.value+'">';
   var imageValuePreview = document.getElementById("imgValuePreview");
   imageValuePreview.innerHTML = imagePreview;
-
-  //CATEGORY
-  var category = document.getElementById("category");
-  var categorySelected = category.options[category.selectedIndex].value;
-  var categoryPreview = document.getElementById("categoryPreview");
-  categoryPreview.innerHTML = categorySelected;
+  //
+  // //CATEGORY
+  // var category = document.getElementById("category");
+  // var categorySelected = category.options[category.selectedIndex].value;
+  // var categoryPreview = document.getElementById("categoryPreview");
+  // categoryPreview.innerHTML = categorySelected;
 
   //LOCATION
   var location = document.getElementById("us2-address");
@@ -39,7 +39,7 @@ function getPreviewEvent() {
 
   //EVENT NAME
   var eventName = document.getElementById("eventname");
-  var eventPreview = '<span class="card-title grey-text text-darken-4 activator">' + eventName.value + '</span>';
+  var eventPreview = '<span class="card-title">'+eventName.value+'</span>';
   var eventNamePreview = document.getElementById("eventNamePreview");
   eventNamePreview.innerHTML = eventPreview;
 
@@ -56,7 +56,7 @@ function getPreviewEvent() {
 
   //Description
   var description = document.getElementById("description");
-  var descriptionPreview = '<textarea class="materialize-textarea">' + description.value + '</textarea>';
+  var descriptionPreview = description.value;
   var descriptionValuePreview = document.getElementById("descriptionValuePreview");
   descriptionValuePreview.innerHTML = descriptionPreview;
 
@@ -93,9 +93,10 @@ function getFormEvent() {
   // Add a second document with a generated ID.
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      db.collection("events").doc(eventName.value).set({
+      db.collection("potentialEvents").doc(eventName.value).set({
           name: eventName.value,
           category: categorySelected,
+          city: user.photoURL,
           description: strDescription.value,
           imageURL: imgsrc.value,
           startTime: startTime.value,
@@ -121,6 +122,36 @@ function getFormEvent() {
             classes: ' red white-text'
           });
         });
+
+        db.collection("potentialEventsTraveler").doc(eventName.value).set({
+            name: eventName.value,
+            category: categorySelected,
+            city: user.photoURL,
+            description: strDescription.value,
+            imageURL: imgsrc.value,
+            startTime: startTime.value,
+            endTime: endTime.value,
+            location: location.value,
+            date: date.value,
+            geoPosition: coords,
+            author: user.uid,
+            id: eventName.value
+
+          })
+          .then(function(docRef) {
+            console.log("Document written");
+            M.toast({
+              html: 'Event Added',
+              classes: ' green white-text'
+            });
+          })
+          .catch(function(error) {
+            console.error("Error adding document: ", error);
+            M.toast({
+              html: 'Event Added',
+              classes: ' red white-text'
+            });
+          });
       // ...
     } else {
       // User is signed out.

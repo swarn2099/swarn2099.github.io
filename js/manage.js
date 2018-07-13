@@ -1,23 +1,22 @@
-var lon, latPoint;
-
-$('#us2').locationpicker({
-  location: {
-    latitude: 0,
-    longitude: 0,
-  },
-  addressFormat: 'street_address',
-  enableAutocomplete: true,
-  enableReverseGeocode: true,
-  inputBinding: {
-    locationNameInput: $('#us2-address')
-  },
-  onchanged: function(currentLocation) {
-    var addressComponents = $(this).locationpicker('map').location.addressComponents;
-    lon = currentLocation.longitude;
-    latPoint = currentLocation.latitude;
-  }
-
-});
+// var lon, latPoint;
+// $('#us2').locationpicker({
+//   location: {
+//     latitude: 0,
+//     longitude: 0,
+//   },
+//   addressFormat: 'street_address',
+//   enableAutocomplete: true,
+//   enableReverseGeocode: true,
+//   inputBinding: {
+//     locationNameInput: $('#us2-address')
+//   },
+//   onchanged: function(currentLocation) {
+//     var addressComponents = $(this).locationpicker('map').location.addressComponents;
+//     lon = currentLocation.longitude;
+//     latPoint = currentLocation.latitude;
+//   }
+//
+// });
 
 function queryResults() {
   console.log("The fucntion ran");
@@ -29,10 +28,10 @@ function queryResults() {
       var welcomeMessage = '<span class="white-text">Welcome ' + displayName + '</span><i class="material-icons right white-text">arrow_drop_down</i></a>';
       welcome.innerHTML = welcomeMessage;
       // User is signed in.
-      db.collection("events").where("author", "==", user.uid).get().then(function(querySnapshot) {
+      db.collection("potentialEvents").where("author", "==", user.uid).get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data().name);
+          console.log(doc.id, " => ", doc.data());
           // var option = '<a href="#!" class="collection-item" id="' + doc.id + '">' + doc.data().name + '</a>';
           var option = '<option value="' + doc.id + '">' + doc.data().name + '</option>';
           console.log(option);
@@ -53,7 +52,7 @@ function editCardRender() {
 
       var cardToEdit = document.getElementById("optionArea");
       var cardToEditSelected = cardToEdit.options[cardToEdit.selectedIndex].value;
-      var docRef = db.collection("events").doc(cardToEditSelected);
+      var docRef = db.collection("potentialEvents").doc(cardToEditSelected);
 
       docRef.get().then(function(doc) {
         if (doc.exists) {
@@ -62,7 +61,7 @@ function editCardRender() {
 
           //IMAGE
           var image = doc.data().imageURL;
-          var imagePreview = '<img class="reduceheight" src="' + image + '"">';
+          var imagePreview = '<img class="reduceheight" src="'+image+'">';
           var imageValuePreview = document.getElementById("imgValuePreview");
           imageValuePreview.innerHTML = imagePreview;
           var imageUrl = document.getElementById("imageUpdate");
@@ -81,6 +80,7 @@ function editCardRender() {
 
           //EVENT NAME
           var eventName = doc.data().name;
+          console.log(eventName);
           var eventNamePreview = document.getElementById("eventname");
           eventNamePreview.value = eventName;
 
@@ -89,7 +89,7 @@ function editCardRender() {
           var docIDPreview = document.getElementById("document");
           docIDPreview.value = docID;
 
-          //TIME
+          //TIME and DATE
           var startTime = doc.data().startTime;
           var endTime = doc.data().endTime;
           var date = doc.data().date;
@@ -113,8 +113,6 @@ function editCardRender() {
       }).catch(function(error) {
         console.log("Error getting document:", error);
       });
-    } else {
-      // No user is signed in.
     }
   });
 };
@@ -124,7 +122,7 @@ function updateEvent() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       var docUpdate = document.getElementById("document");
-      var washingtonRef = db.collection("events").doc(docUpdate.value);
+      var washingtonRef = db.collection("potentialEvents").doc(docUpdate.value);
       var coords = {
         latPoint,
         lon
@@ -135,7 +133,7 @@ function updateEvent() {
           location: document.getElementById("us2-address").value,
           startTime: document.getElementById("starttime").value,
           endTime: document.getElementById("endtime").value,
-          date: document.getElementById("eventname").value,
+          date: document.getElementById("date").value,
           description: document.getElementById("textarea1").value,
           imageURL: document.getElementById("imageUpdate").value,
           // geoPosition: coords,
@@ -165,7 +163,7 @@ function deleteEvent() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       var docUpdate = document.getElementById("document");
-      var washingtonRef = db.collection("events").doc(docUpdate.value).delete().then(function() {
+      var washingtonRef = db.collection("potentialEvents").doc(docUpdate.value).delete().then(function() {
         console.log("Document successfully deleted!");
         M.toast({
           html: 'Event Deleted',

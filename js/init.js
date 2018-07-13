@@ -1,13 +1,14 @@
 (function($) {
   $(function() {
     $('.tabs').tabs();
+    $('.scrollspy').scrollSpy();
     $('.sidenav').sidenav();
     $('.dropdown-trigger').dropdown();
     $('.datepicker').datepicker({autoClose: true});
     $('select').formSelect();
+    $('.parallax').parallax();
     $('.timepicker').timepicker({
       vibrate: true,
-      autoClose: true,
     });
     $(".button-collapse").sideNav();
 
