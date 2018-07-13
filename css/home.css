@@ -19,29 +19,6 @@ body {
   font-family: 'Montserrat';
 
 }
-
-
-
-#rcorners1 {
-  border-radius: 15px;
-  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
-  height: 500px;
-  width: 500px;
-  background-color: #fff;
-  padding: 10px;
-}
-
-#rcorners2 {
-  border-radius: 15px;
-  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
-}
-
-#rcorners3 {
-  border-radius: 15px;
-  box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
-  margin-top: 500px;
-}
-
 .card {
   border-radius: 20px;
   padding: 0px;

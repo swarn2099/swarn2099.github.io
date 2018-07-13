@@ -28,12 +28,16 @@
     firebase.initializeApp(config);
   </script>
   <style>
-    header {
+    .header1 {
       position: relative;
       height: 465px;
       background: linear-gradient(50deg, HSLA(205, 62%, 44%, 1), #43cea2, #185a9d);
     }
-
+    .header2 {
+      position: relative;
+      height: 450px;
+      background: linear-gradient(50deg, HSLA(205, 62%, 44%, 1), #43cea2, #185a9d);
+    }
     h1 {
       padding: 100px 0;
       font: 44px "Arial";
@@ -62,13 +66,21 @@
         display: none;
       }
     }
+
     .centered {
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-}
+      position: fixed;
+      top: 55%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
+    .centered1 {
+      position: fixed;
+      top: 85%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
   </style>
 </head>
 
@@ -96,13 +108,13 @@
 </nav>
 
 <body>
-  <header>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-    <polygon class="svg--lg" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
-    <polygon class="svg--lg" fill="white" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
-  </svg>
-
-  </header>
+  <section class="hide-on-small-only">
+    <header class="header1">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="svg--lg" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+        <polygon class="svg--lg" fill="white" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
+      </svg>
+    </header>
     <div class="section container centered">
       <div class="row">
         <div class="col s12 m6">
@@ -145,9 +157,57 @@
         </div>
       </div>
     </div>
+  </section>
+  <div class="hide-on-med-and-up">
+    <header class="header2">
 
-
-  <div class="centered">
+    <div class="section container ">
+      <div class="row">
+        <div class="col s12 m6">
+          <a href="add.html">
+            <div class="card waves-effect waves-light" id="rcorners2">
+              <div class="card-image">
+                <img src="../img/event.jpg">
+                <span class="card-title">Add Event</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6">
+          <a href="manage.html">
+            <div class="card waves-effect waves-light" id="rcorners2">
+              <div class="card-image">
+                <img src="../img/manage.jpeg">
+                <span class="card-title">Manage Events</span>
+              </div>
+            </div>
+        </div>
+        </a>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card waves-effect waves-light" id="rcorners2">
+            <div class="card-image">
+              <img src="../img/contact.jpeg">
+              <span class="card-title">Contact Traveler</span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card waves-effect waves-light" id="rcorners2">
+            <div class="card-image">
+              <img src="../img/data.jpeg">
+              <span class="card-title">Real Time Data</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon class="svg--lg" fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
+      <polygon class="svg--lg" fill="white" points="0,0 15,100 33,21 45,100 50,75 55,100 72,20 85,100 95,50 100,80 100,100 0,100" />
+    </svg>
+  </header>
   </div>
   <script>
     firebase.auth().onAuthStateChanged(function(user) {

@@ -10545,10 +10545,10 @@ nav {
     padding-bottom: 50px; }
   @media only screen and (max-width: 600px) {
     .hero {
-      padding-top: 290px; } }
+      padding-top: 125px; } }
   .hero .hero-img-col {
     padding: 0;
-    margin-bottom: -6px; }
+    margin-bottom: -5px; }
 
 footer {
   padding: 100px 0;
@@ -10638,6 +10638,7 @@ footer {
     text-align: center;
     text-transform: uppercase;
     font-weight: 500; }
+
   .how .how-icon {
     padding: 20px 0 20px;
     color: #F62D51;
@@ -10661,6 +10662,9 @@ footer {
     border-right: 3px dashed HSLA(205, 85%, 92%, 1);
     min-height: 550px;
     padding-bottom: 200px; }
+    @media only screen and (max-width: 600px) {
+      .how-step-right {
+        padding-top: 5px; } }
     .how .how-step-left .how-step-left-icon i {
       font-size: 50px;
       color: #F62D51; }
