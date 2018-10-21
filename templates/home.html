@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 viewport-fit=cover">
+  <!-- Compiled and minified CSS -->
+
+
+
+  <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css" />
+  <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="SaferAcres">
+  <link rel="apple-touch-icon" sizes="152x152" href="../static/img/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="../static/img/touch-icon-ipad-retina.png">
+    <link href="../static/img/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="../static/img/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="../static/img/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+
+  <title>Feed | SaferAcres</title>
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- Compiled and minified JavaScript -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link type="text/css" rel="stylesheet" href="../static/css/animate.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../static/css/home.css" media="screen,projection" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script type="text/javascript" src="../static/js/init.js"></script>
+  <script type="text/javascript" src="../static/js/home.js"></script>
+  <script type="text/javascript" src="../static/js/marker.js"></script>
+
+  <script>
+    function home() {
+      window.open('home.html', '_self');
+    }
+
+    function map() {
+      window.open('map.html', '_self');
+    }
+
+    function today() {
+      window.open('https://app.powerbi.com/view?r=eyJrIjoiMDYyZGViMDQtNDY3OC00MDdhLTk2Y2UtOWU2MGY4ZjIyYTk5IiwidCI6IjY5YmNlNTA3LTljZjgtNDRhZC1iOTc3LWQ0NDM1ZmYzZDhjNSIsImMiOjN9', '_self');
+    }
+  </script>
+  <style>
+    #round {
+      border-radius: 25px;
+    }
+
+    .nav {
+      box-shadow: none;
+      z-depth: none;
+    }
+  </style>
+
+</head>
+
+<div class="navbar-fixed">
+  <nav class="white black-text z-depth-0">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo left"><span class="burnt heavy-text"><b>Crime Feed</b></span></a>
+      <a class="brand-logo orange-text right modal-trigger" href="#modal1">  <i class="material-icons large">add</i>
+</a>
+    </div>
+  </nav>
+</div>
+
+
+<nav class="navbar is-fixed-bottom is-dark">
+  <div class="columns is-mobile">
+    <div class="column" style="margin-left: 10%; ">
+      <a onclick="home()"><i class="fa fa-user-ninja fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+    <div class="column" style="margin-left: 10%;">
+      <a onclick="map()"><i class="fa fa-map fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+    <div class="column" style="margin-left: 10%;">
+      <a onclick="today()"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+  </div>
+</nav><br>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal burnt" style="border-radius: 20px;">
+  <div class="container"><br>
+    <h4 class="red-text"><b>Crime Report</b></h4>
+    <blockquote>
+      Please call 911 first if you are in direct danger. </blockquote>
+    <div class="collection" style="border-radius: 20px;">
+      <a href="#!" class="collection-item"><input class="file-input" id="video" type="file" accept="video/*">Record Crime</a>
+    </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" class="materialize-textarea"></textarea>
+            <label for="textarea1">Quick Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="location" class="materialize-textarea"></textarea>
+            <label for="textarea1">Location</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <a class="button is-primary is-rounded is-danger is-large" style="margin-left: 15%;" onclick="crimeAlert();">Report Crime</a>
+  </div>
+</div>
+
+<body class="" onload="loadData()">
+  <div class="container">
+  <div id="cardList"></div>
+
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card">
+          <div class="card-image">
+            <video class="responsive-video" controls>
+              <source src="../static/img/IMG_4397.mov" type="video/mp4">
+            </video>
+            <div class="card-content">
+              <div class="row">
+                <div class="col s6">
+                  <h6><b>Description </b></h6></div>
+                <div class="col s6 red-text">18% Crime Severity</div>
+              </div>
+              <p>Man trying to steal bike and runs away</p>
+              <h6><b>Location</b></h6>
+              <p>West Campus</p>
+              <h6><b>Tags</b></h6>
+              <p>#bike #theft #man #stolen </p>
+              <h6><b>Suspect Description</b></h6>
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="../static/img/thief.jpg" alt="" class="circle responsive-img">
+                </div>
+                <div class="col s10">
+                  <span class="black-text">Black Jacket, bulk build.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div class="card-image">
+              <video class="responsive-video" controls>
+              <source src="../static/img/IMG_0077.mov" type="video/mp4">
+            </video>
+              <div class="card-content">
+                <div class="row">
+                  <div class="col s6">
+                    <h6><b>Description </b></h6></div>
+                  <div class="col s6 red-text">41% Crime Severity</div>
+                </div>
+                <p>Fight breaking out at AT&T Center</p>
+                <h6><b>Location</b></h6>
+                <p>ATnT Conference Center</p>
+                <h6><b>Tags</b></h6>
+                <p>#fight #man #brutal</p>
+                <h6><b>Suspect Description</b></h6>
+                <div class="row valign-wrapper">
+                  <div class="col s2">
+                    <img src="../static/img/thief.jpg" alt="" class="circle responsive-img">
+                  </div>
+                  <div class="col s10">
+                    <span class="black-text">Black Jacket, bulk build.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <video class="responsive-video" controls>
+              <source src="../static/img/IMG_4395.mov" type="video/mp4">
+            </video>
+                <div class="card-content">
+                  <div class="row">
+                    <div class="col s6">
+                      <h6><b>Description </b></h6></div>
+                    <div class="col s6 red-text">38% Crime Severity</div>
+                  </div>
+                  <p>Theft recorded at HackTX</p>
+                  <h6><b>Location</b></h6>
+                  <p>ATnT Conference Center</p>
+                  <h6><b>Tags</b></h6>
+                  <p>#theft </p>
+                  <h6><b>Suspect Description</b></h6>
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="../static/img/thief.jpg" alt="" class="circle responsive-img">
+                    </div>
+                    <div class="col s10">
+                      <span class="black-text">Green Jacket, Tall</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <video class="responsive-video" controls>
+              <source src="../static/img/IMG_4396.mov" type="video/mp4">
+            </video>
+                  <div class="card-content">
+                    <div class="row">
+                      <div class="col s6">
+                        <h6><b>Description </b></h6></div>
+                      <div class="col s6 red-text">72% Crime Severity</div>
+                    </div>
+                    <p>Assault recorded at AT&T Conference Center</p>
+                    <h6><b>Location</b></h6>
+                    <p>Conference Center</p>
+                    <h6><b>Tags</b></h6>
+                    <p>#beaten #injury #attack #assault </p>
+                    <h6><b>Suspect Description</b></h6>
+                    <div class="row valign-wrapper">
+                      <div class="col s2">
+                        <img src="../static/img/thief.jpg" alt="" class="circle responsive-img">
+                      </div>
+                      <div class="col s10">
+                        <span class="black-text">Green Jacket, Tall</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+</body>
+
+</html>

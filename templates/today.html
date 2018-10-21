@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,">
+  <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/css/atlas.min.css?api-version=1" type="text/css" />
+  <script src="https://atlas.microsoft.com/sdk/js/atlas.min.js?api-version=1"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="SaferAcres">
+  <title>Feed | SaferAcres</title>
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link type="text/css" rel="stylesheet" href="../static/css/animate.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../static/css/home.css" media="screen,projection" />
+
+
+  <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/init.js"></script>
+  <script type="text/javascript" src="../static/js/home.js"></script>
+  <script type="text/javascript" src="../static/js/marker.js"></script>
+  <script>
+  function home() {
+    window.open('home.html', '_self');
+  }
+  function map() {
+    window.open('http://40.124.2.212:443/map', '_self');
+  }
+  function today() {
+    window.open('https://app.powerbi.com/view?r=eyJrIjoiMDYyZGViMDQtNDY3OC00MDdhLTk2Y2UtOWU2MGY4ZjIyYTk5IiwidCI6IjY5YmNlNTA3LTljZjgtNDRhZC1iOTc3LWQ0NDM1ZmYzZDhjNSIsImMiOjN9', '_self');
+  }
+  </script>
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item " href=""><br><h1 class="title is-4 has-text-dark"><span class="burnt">Today's Data</span></h1></a>
+
+  </div>
+</nav>
+
+<nav class="navbar is-fixed-bottom is-dark">
+  <div class="columns is-mobile">
+    <div class="column" style="margin-left: 10%; margin-top: 2%;">
+      <a onclick="home()"><i class="fa fa-user-ninja fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+    <div class="column" style="margin-left: 10%; margin-top: 2%;">
+      <a onclick=""="map()"><i class="fa fa-map fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+    <div class="column" style="margin-left: 10%; margin-top: 2%;">
+      <a onclick=""="today()"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i><br></a>
+    </div>
+  </div>
+</nav>
+<br>
+
+<body class="" onload="loadData()">
+  <a class="button is-danger is-rounded is-large" href="https://app.powerbi.com/view?r=eyJrIjoiMDYyZGViMDQtNDY3OC00MDdhLTk2Y2UtOWU2MGY4ZjIyYTk5IiwidCI6IjY5YmNlNTA3LTljZjgtNDRhZC1iOTc3LWQ0NDM1ZmYzZDhjNSIsImMiOjN9">Click here to view Data</a>
+
+
+</body>
+
+
+</html>

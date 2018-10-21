@@ -1,0 +1,74 @@
+
+
+.color-page2 {
+  background: linear-gradient(45deg, #000000,  #cc5500 );
+  position: relative;
+  animation: pastelRainbow 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+html, body{
+  font-family: 'Montserrat';
+  overflow-x: hidden;
+
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+
+
+}
+
+a{
+  color: white;
+}
+.avoid{
+  color: black;
+}
+
+.card{
+  border-radius: 25px;
+  min-height: 300px;
+}
+.burnt{
+  color: #cc5500;
+  background-color: white;
+  border-color: #cc5500;
+}
+
+
+@keyframes pastelRainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+ .fab {
+   width: 70px;
+   height: 70px;
+   background-color: red;
+   border-radius: 50%;
+   box-shadow: 0 6px 10px 0 #666;
+
+   font-size: 50px;
+   line-height: 70px;
+   color: white;
+   text-align: center;
+
+   position: fixed;
+   right: 50px;
+   bottom: 50px;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.fab:hover {
+   box-shadow: 0 6px 14px 0 #666;
+   transform: scale(1.05);
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="SaferAcres">
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../static/img/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../static/img/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../static/img/touch-icon-ipad-retina.png">
+  <link href="../static/img/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+  <link href="../static/img/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <link href="../static/img/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+
+  <title>Home | SaferAcres</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../static/css/home.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../static/css/animate.css" media="screen,projection" />
+  <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../static/js/init.js"></script>
+  <script type="text/javascript" src="../static/js/home.js"></script>
+<script>
+function login() {
+  window.open('http://40.124.2.212:443/home', '_self');
+}
+</script>
+</head>
+
+<body class="color-page2">
+  <div class="row">
+    <div class="col m6 s6">
+      <div class="white-text">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="white-text heavy " style="font-weight: 800;"><b>SaferAcres</b></h1>
+  </div>
+  <div class="row">
+    <div class="col s12 m4 push-m1">
+      <div class="hide-on-small-only">
+        <h5 class="white-text heavy" style="font-weight: 800; font-size: 28px; padding-top: 20px;"><b>Making you smarter and safer.</b></h5></div>
+      <div class="hide-on-med-and-up">
+        <h5 class="white-text heavy" style="font-weight: 800; font-size: 18px; padding-top: 1px;"><b>Making you smarter and safer.</b></h5></div>
+    </div>
+    <img src="../static/img/austin.png" width="400px;"><br><br>
+
+    <div class="col s12">
+      <div class="card hoverable center z-depth-5" style="margin-top: -50px;">
+        <div class="card-content black-text">
+          <span class="card-title center heavy-text"><h5 style="font-weight: 900px;">Sign Up</h5></span>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" placeholder="Enter you .edu email" type="email" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <a class="waves-effect waves-light btn-large burnt" style="border-radius: 20px;" onclick="login()"><i class="material-icons right">directions_run</i>lets go</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../static/js/materialize.min.js"></script>
+
+</html>
